@@ -1,0 +1,39 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.athena.configuration.product.1111.clou-upi.payment-account-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"product_configurations/product_PRDUS001111/provider_athena/payment_account_product/payment_account_product_clou.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: athena.configuration.product.1111.clou-upi.payment-account-product
+    name: CLO UPI Payment Account Product for 1111
+    description: Credit Line on UPI Payment Account Product for 1111
+    requester:
+      module: athena
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"allowedTransactionCurrencies":{"items":{"type":"string"},"type":"array"},"attributes":{"additionalProperties":{"type":"object"},"type":"object"},"baseCurrency":{"type":"string"},"code":{"type":"string"},"description":{"type":"string"},"disallowedTransactionCurrencies":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"paymentAccountProviderCode":{"type":"string"},"status":{"enum":["ACTIVE","INACTIVE"]},"tags":{"items":{"pattern":"^tag://[a-zA-Z0-9-]+/.{1,255}$","type":"string"},"type":"array"},"type":{"enum":["UPI","PREPAID_CARD","CREDIT_CARD","DEBIT_CARD","NET_BANKING","CASHBACK_ACCOUNT","UPI_MANDATE"]},"vectors":{"items":{"pattern":"^vector://[a-zA-Z0-9-]+/.{1,255}$","type":"string"},"type":"array"}},"required":["name","code","type","paymentAccountProviderCode","baseCurrency","status"],"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      baseCurrency: INR
+      code: PPDINZZ001111
+      description: Credit Line on UPI Payment Account Product for 1111
+      name: CLO UPI Payment Account Product 1111
+      paymentAccountProviderCode: PAPUS009002
+      status: ACTIVE
+      type: UPI
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.athena.payment-account-product
+    displayName: CLO UPI Payment Account Product 1111

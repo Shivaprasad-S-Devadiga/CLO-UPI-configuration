@@ -1,0 +1,39 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.athena.configuration.product.1111.clou-upi.form-factor-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"/.defaults/product_configurations/provider_athena/tree/root/t0/product_configurations/product_PRDUS009978/provider_athena/form_factor_product/form_factor_product_card.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: athena.configuration.product.1111.clou-upi.form-factor-product
+    description: Credit Line on UPI Form Factor Product for 1111
+    requester:
+      module: athena
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"issuanceStatus":{"enum":["ACTIVE","INACTIVE"]},"name":{"type":"string"},"paymentStatus":{"enum":["ACTIVE","INACTIVE"]},"provider":{"enum":["CMS","WMS","WCMS","TTMS","UIDMS","PMS","PCMS","UPIMS","PKMS","DIDMS"]},"skuID":{"type":"string"},"tags":{"items":{"pattern":"^tag://[a-zA-Z0-9-]+/.{1,255}$","type":"string"},"type":"array"},"type":{"enum":["card","wallet","walletCard","tethysToken","uniqueId","phoneNumber","proxyCard","vpa","public_key","device"]}},"required":["code","name","description","type","provider","issuanceStatus","paymentStatus"],"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      code: FFPINZZ001111CLOU01
+      description: Credit Line on UPI Form Factor Product for 1111
+      issuanceStatus: ACTIVE
+      name: CLO UPI Form Factor Product 1111
+      paymentStatus: ACTIVE
+      provider: UPIMS
+      skuID: SKUINZZ001111CLOU01
+      type: vpa
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.athena.form-factor-product
+    displayName: CLO UPI Form Factor Product 1111

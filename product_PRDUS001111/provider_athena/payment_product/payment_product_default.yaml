@@ -1,0 +1,44 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.athena.configuration.product.1111.clou-upi.payment-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"product_configurations/product_PRDUS001111/provider_athena/payment_product/payment_product_clou.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: athena.configuration.product.1111.clou-upi.payment-product
+    name: CLO UPI Payment Product for 1111
+    description: Credit Line on UPI Payment Product for 1111
+    requester:
+      module: athena
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"channelCodePaymentCodeMapping":{"items":{"properties":{"channelCode":{"type":"string"},"paymentCodes":{"items":{"type":"string"},"minItems":1,"type":"array","uniqueItems":true}},"required":["channelCode","paymentCodes"],"type":"object"},"type":"array"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"resourceProductCode":{"type":"string"},"status":{"enum":["ACTIVE","INACTIVE"]},"tags":{"items":{"pattern":"^tag://[a-zA-Z0-9-]+/.{1,255}$","type":"string"},"type":"array"},"walletProductCode":{"type":"string"}},"required":["code","name","description","resourceProductCode","status"],"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      code: PYPINZZ001111
+      description: Credit Line on UPI Payment Product for 1111
+      name: CLO UPI Payment Product 1111
+      resourceProductCode: RSPINZZ001111
+      status: ACTIVE
+      channelCodePaymentCodeMapping:
+        - channelCode: CHNINZZ5901
+          paymentCodes:
+            - PMCINZZ009912906
+            - PMCINZZ009913906
+            - PMCINZZ009914906
+            - PMCINZZ009914904
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.athena.payment-product
+    displayName: CLO UPI Payment Product 1111

@@ -1,0 +1,38 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.athena.configuration.product.1111.clou-upi.resource-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"product_configurations/product_PRDUS001111/provider_athena/resource_product/resource_product_clou.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: athena.configuration.product.1111.clou-upi.resource-product
+    name: CLO UPI Resource Product for 1111
+    description: Credit Line on UPI Resource Product for 1111
+    requester:
+      module: athena
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"formFactorProducts":{"items":{"type":"string"},"type":"array"},"name":{"type":"string"},"status":{"enum":["ACTIVE","INACTIVE"]},"tags":{"items":{"pattern":"^tag://[a-zA-Z0-9-]+/.{1,255}$","type":"string"},"type":"array"}},"required":["code","name","description","status"],"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      code: RSPINZZ001111
+      description: Credit Line on UPI Resource Product for 1111
+      formFactorProducts:
+        - FFPINZZ001111CLOU01
+      name: CLO UPI Resource Product 1111
+      status: ACTIVE
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.athena.resource-product
+    displayName: CLO UPI Resource Product 1111
