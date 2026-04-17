@@ -1,0 +1,41 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.aether.configuration.product.9978.bundle.product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"/.defaults/product_configurations/provider_aether/tree/root/t0/product_configurations/product_PRDUS001111/product_bundle.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: aether.configuration.product.1111.bundle.product
+    name: Upi line on credit bundle for 1111
+    description: Default Product Bundle
+    requester:
+      module: aether
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      code: PRDIN001111
+      codeSuffix: '1111'
+      description: Upi line on credit bundle for 1111
+      imageUrl: https://card-program-files.s3.amazonaws.com/optimawebviews-bucket/Starbucks_1.jpg
+      name: Upi line on credit bundle for 1111
+      source:
+        clonedFrom: Template
+        clonedProduct: PRDIN009978
+      status: active
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.aether.product
+    displayName: Upi line on credit bundle for 1111

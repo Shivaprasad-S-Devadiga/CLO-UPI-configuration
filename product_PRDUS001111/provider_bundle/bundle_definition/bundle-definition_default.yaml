@@ -1,0 +1,61 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.aether.configuration.product.1111.default.bundle-definition
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"/.defaults/product_configurations/provider_aether/tree/root/t0/product_configurations/product_PRDUS001111/provider_bundle/bundle_definition/bundle-definition_default.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: aether.configuration.product.1111.default.bundle-definition
+    name: default bundle definition
+    description: default bundle definition
+    requester:
+      module: aether
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"applySpendLimits":{"type":"boolean"},"bundleStatusPolicyCode":{"type":"string"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"picURL":{"type":"string"},"productMappings":{"properties":{"accountProduct":{"properties":{"productCode":{"type":"string"},"productFamilyCode":{"type":"string"},"serviceProvider":{"type":"string"}},"type":"object"},"loanAccountProducts":{"items":{"properties":{"productCode":{"type":"string"},"productFamilyCode":{"type":"string"},"serviceProvider":{"type":"string"}},"required":["productCode","serviceProvider"],"type":"object"},"type":"array"},"notificationProduct":{"properties":{"description":{"type":"string"},"productCode":{"type":"string"},"productName":{"type":"string"},"receiverType":{"enum":["ACCOUNT_HOLDER","AUTH_PROFILE"],"type":"string"},"serviceProvider":{"type":"string"},"tenantId":{"type":"number"}},"required":["productName","tenantId","receiverType","serviceProvider"],"type":"object"},"paymentAccountProduct":{"properties":{"productCode":{"type":"string"},"productFamilyCode":{"type":"string"}},"type":"object"},"paymentProduct":{"properties":{"productCode":{"type":"string"},"productFamilyCode":{"type":"string"}},"type":"object"}},"required":["accountProduct","paymentProduct"],"type":"object"}},"required":["code","name","description","picURL"],"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      applySpendLimits: true
+      bundleStatusPolicyCode: BSPIN001001
+      code: BUNIN1111
+      description: Bundle consists of an account product, loan account products, payment product, and a notification product.
+      issueInactiveCard: true
+      name: default bundle definition 1111
+      picURL: https://card-program-files.s3.amazonaws.com/partnergiftcard.png
+      productMappings:
+        accountProduct:
+          productCode: RAPIN001111
+          productFamilyCode: APFIN001111
+          serviceProvider: RUBY
+        loanAccountProducts:
+          productCode: EMLAPIN001111
+          productFamilyCode: EMLAPFIN00001111
+          serviceProvider: EMERALD  
+        notificationProduct:
+          description: Notification product for credit bundles
+          productCode: NOTIFI9978
+          productName: Credit Notification Product 1
+          receiverType: ACCOUNT_HOLDER
+          serviceProvider: LUMINOS
+          tenantId: '600309'
+        paymentAccountProduct:
+          productCode: PPDINZZ001111
+          productFamilyCode: PPDINZZ001111
+        paymentProduct:
+          productCode: PYPINZZ001111
+          productFamilyCode: PYPINZZ001111 
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.aether.bundle-definition
+    displayName: default bundle definition
