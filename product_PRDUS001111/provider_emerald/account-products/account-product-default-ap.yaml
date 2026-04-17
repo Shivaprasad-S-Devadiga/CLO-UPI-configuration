@@ -1,0 +1,73 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.emerald.configuration.product.1111.default-ap.account-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"CLO-UPI-configuration/product_PRDUS001111/provider_emerald/account-products/account-product-default-ap.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: emerald.configuration.product.1111.default-ap.account-product
+    name: default-ap
+    description: UPI credit-line Account Product for 001111
+    requester:
+      module: emerald
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"attributes":{"type":"object"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"amortizationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"defaultTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxLoanAmount":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"maxTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"minLoanAmount":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"}},"type":"object"},"vboId":{"type":"string"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      attributes:
+        key1: value1
+      code: RAPUS001111
+      description: ABC Bank UPI credit line account product
+      name: ABC Bank UPI Credit Line
+      policies:
+        accountClosurePolicy:
+          code: accountClosurePolicy
+          version: 1
+        accountNumberGenerationPolicy:
+          code: accountNumberGenerationPolicy
+          version: 1
+        amortizationPolicy:
+          code: amortizationPolicy
+          version: 1
+        interestPolicy:
+          code: EIPUS008001
+          version: 1
+        repaymentPolicy:
+          code: repaymentPolicy
+          version: 1
+      productPreferences:
+        defaultTenure:
+          days: 0
+          months: 12
+          years: 0
+        issuanceStartDate: '2026-04-17'
+        issuanceEndDate: '2999-12-31'
+        maxLoanAmount:
+          amount: 500000
+          currency: INR
+        minLoanAmount:
+          amount: 1000
+          currency: INR
+        maxTenure:
+          days: 0
+          months: 24
+          years: 0
+        minTenure:
+          days: 0
+          months: 1
+          years: 0
+      vboId: ABCCL
+  viewConfig:
+    angelosSchema:
+      view: {}
