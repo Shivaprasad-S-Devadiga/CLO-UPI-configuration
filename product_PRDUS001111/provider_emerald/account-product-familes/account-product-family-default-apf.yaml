@@ -1,0 +1,37 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.emerald.configuration.product.1111.default-apf.account-product-family
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"CLO-UPI-configuration/product_PRDUS001111/provider_emerald/account-product-familes/account-product-family-default-apf.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: emerald.configuration.product.1111.default-apf.account-product-family
+    name: default-apf
+    description: default-apf Account Product Family for 001111
+    requester:
+      module: emerald
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"attributes":{"type":"object"},"coaCode":{"type":"string"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"parentCoaNodeCode":{"type":"string"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      attributes:
+        key1: value1
+      coaCode: COACODE
+      code: EPFUS001111
+      description: Product family for ABC Bank UPI credit line
+      name: ABC Bank UPI Credit Line Family
+      parentCoaNodeCode: COANODECODE
+  viewConfig:
+    angelosSchema:
+      view: {}
