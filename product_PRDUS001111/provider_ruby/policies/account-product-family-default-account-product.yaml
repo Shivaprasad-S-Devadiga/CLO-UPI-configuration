@@ -25,9 +25,9 @@ spec:
     isEncrypted: false
     useVault: false
     value:
-      accountProductFamilyCode: APF<CC>009978
-      channelCodes:
-        - CHN<CC>ZZ11<XX>
+      accountProductFamilyCode: APFUPI00001
+      # channelCodes:
+      #   - CHN<CC>ZZ11<XX>
       coaCode: COAUPI00001
       code: RAPUPI009978
       description: family-upi-account-product Ruby Account Product
