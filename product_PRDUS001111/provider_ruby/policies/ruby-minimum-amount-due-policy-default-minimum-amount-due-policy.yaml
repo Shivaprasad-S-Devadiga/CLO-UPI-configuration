@@ -1,0 +1,92 @@
+kind: RubyMinimumAmountDuePolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby-dev.rubyminimumamountduepolicy.upi-minimum-amount-due-policy
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  namespace: ruby-dev
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-minimum-amount-due-policies/ruby-minimum-amount-due-policy-upi-minimum-amount-due-policy.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby-dev.rubyminimumamountduepolicy.upi-minimum-amount-due-policy
+    name: upi-minimum-amount-due-policy
+    description: upi-minimum-amount-due-policy Ruby Minimum Amount Due Policy
+    requester:
+      module: ruby-dev
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  code: MADUPI00001
+  description: upi-minimum-amount-due-policy Ruby Minimum Amount Due Policy
+  minimumMadAmount: 3500
+  name: upi-minimum-amount-due-policy Ruby Minimum Amount Due Policy
+  overwriteupiBehaviour: false
+  postingCategoriesComponent:
+  - percentage: 5
+    postingCategory: RetailPrincipalBilled
+  - percentage: 5
+    postingCategory: RetailPrincipalUnbilled
+  # - percentage: 5
+  #   postingCategory: AnnualFeeBilled
+  # - percentage: 5
+  #   postingCategory: AnnualFeeUnbilled
+  # - percentage: 5
+  #   postingCategory: AddOnUserAnnualFeeBilled
+  # - percentage: 5
+  #   postingCategory: AddOnUserAnnualFeeUnbilled
+  # - percentage: 5
+  #   postingCategory: OverlimitFeeBilled
+  # - percentage: 5
+  #   postingCategory: OverlimitFeeUnbilled
+  # - percentage: 5
+  #   postingCategory: InsufficientFundFeeBilled
+  # - percentage: 5
+  #   postingCategory: InsufficientFundFeeUnbilled
+  - percentage: 5
+    postingCategory: RetailServiceFeeBilled
+  - percentage: 5
+    postingCategory: RetailServiceFeeUnbilled
+  - percentage: 5
+    postingCategory: CollectionFeeBilled
+  - percentage: 5
+    postingCategory: CollectionFeeUnbilled
+  - percentage: 5
+    postingCategory: RetailMiscFeeBilled
+  - percentage: 5
+    postingCategory: RetailMiscFeeUnbilled
+  - percentage: 0
+    postingCategory: gstBilled
+  - percentage: 0
+    postingCategory: gstUnbilled
+  # - percentage: 5
+  #   postingCategory: CashPrincipalBilled
+  # - percentage: 5
+  #   postingCategory: CashPrincipalUnbilled
+  # - percentage: 5
+  #   postingCategory: CashInterestBilled
+  # - percentage: 5
+  #   postingCategory: CashInterestUnbilled
+  # - percentage: 5
+  #   postingCategory: CashAdvanceFeeBilled
+  # - percentage: 5
+  #   postingCategory: CashAdvanceFeeUnbilled
+  - percentage: 5
+    postingCategory: RetailInterestBilled
+  - percentage: 5
+    postingCategory: RetailInterestUnbilled
+  - percentage: 0
+    postingCategory: LateFeeBilled
+  - percentage: 100
+    postingCategory: LateFeeUnbilled
+  - percentage: 0
+    postingCategory: EMIInterestUnbilled
+  - percentage: 0
+    postingCategory: EMIInterestBilled
+  - percentage: 0
+    postingCategory: EMIPrincipalUnbilled
+  - percentage: 0
+    postingCategory: EMIPrincipalBilled
+  templateCode: IN-credit
+  validFrom: '2000-01-01T00:00:00.000-07:00'
+  validTill: '2999-01-01T00:00:00.000-07:00'

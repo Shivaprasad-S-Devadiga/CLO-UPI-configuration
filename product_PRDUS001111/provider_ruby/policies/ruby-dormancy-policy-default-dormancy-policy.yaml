@@ -1,0 +1,40 @@
+kind: RubyDormancyPolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby-dev.rubydormancypolicy.upi-dormancy-policy
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  namespace: ruby-dev
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-dormancy-policies/ruby-dormancy-policy-upi-dormancy-policy.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby-dev.rubydormancypolicy.upi-dormancy-policy
+    name: upi-dormancy-policy
+    description: UPI Credit Line Dormancy Policy
+    requester:
+      module: ruby-dev
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  applicableVoucherCodesCredit:
+  - REPAYMENT
+  code: DORUPI00001
+  description: UPI Credit Line Dormancy Policy
+  dormancyRules:
+  - days: 30
+    description: Dormant for 30 days
+    level: 1
+  - days: 37
+    description: Dormant for 37 days
+    level: 2
+  - days: 365
+    description: Dormant for 365 days
+    level: 3
+  - days: 395
+    description: Dormant for 395 days
+    level: 4
+  name: upi-dormancy-policy UPI Credit Line Dormancy Policy
+  templateCode: IN-credit
+  validFrom: 2026-04-17T00:00:00.000+05:30
+  validTill: 2999-12-31T23:59:59.999+05:30

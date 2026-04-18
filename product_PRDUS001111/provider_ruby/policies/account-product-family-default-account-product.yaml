@@ -1,0 +1,89 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.configuration.product.9978.upi-account-product.account-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-product-familes/account-product-family-upi-account-product.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby.configuration.product.9978.upi-account-product.account-product
+    name: upi-account-product
+    description: family-upi-account-product Account Product for 9978
+    requester:
+      module: ruby
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"delinquencyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"dormancyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"feePolicies":{"properties":{"annualFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardReplacementFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"purchaseForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"madPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"statementPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"cashLimitPercent":{"type":"number"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"overLimitPercent":{"type":"number"}},"type":"object"},"programs":{"items":{"properties":{"code":{"type":"string"},"type":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      accountProductFamilyCode: APF<CC>009978
+      channelCodes:
+        - CHN<CC>ZZ11<XX>
+      coaCode: COAUPI00001
+      code: RAPUPI009978
+      description: family-upi-account-product Ruby Account Product
+      name: family-upi-account-product Ruby Account Product
+      policies:
+        accountClosurePolicy:
+          code: ACPUPI00001
+          version: 0.0.1
+        accountNumberGenerationPolicy:
+          code: ANGUPI00001
+          version: 0.0.1
+        couponAccountingPolicy:
+          code: CAP<CC>00<XXXX>
+          version: 0.0.1
+        delinquencyPolicy:
+          code: DLQUPI00001
+          version: 0.0.1
+        dormancyPolicy:
+          code: DORUPI00001
+          version: 0.0.1
+        feePolicies:
+          lateFee:
+            code: LPF<CC>00<XXXX>
+            version: 0.0.1
+        interestPolicy:
+          code: INTUPI0001
+          version: 0.0.1
+        madPolicy:
+          code: MADUPI00001
+          version: 0.0.1
+        repaymentPolicy:
+          code: REP<CC>00<XXXX>
+          version: 0.0.1
+        spendLimitPolicy:
+          code: SPL<CC>00<XXXX>
+          version: <LONG-Eg-5852047285872902714>
+        statementPolicy:
+          code: STM<CC>00<XXXX>
+          version: 0.0.1
+      productPreferences:
+        issuanceEndDate: YYYY-MM-DD
+        issuanceStartDate: YYYY-MM-DD
+        maxCreditLimit:
+          amount: 100000000
+          currency: <CUR>
+        minCreditLimit:
+          amount: 1000000
+          currency: <CUR>
+        overLimitPercent: 0
+      programs:
+        - code: IPG<CC>00<XXXX>01
+          type: General
+          validFrom: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
+          validTill: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
+      templateCode: us-credit
+  viewConfig:
+    angelosSchema:
+      view: {
+        }

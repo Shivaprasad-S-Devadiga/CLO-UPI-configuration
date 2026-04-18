@@ -1,0 +1,174 @@
+# kind: Configuration
+# apiVersion: rrsd.zetaapps.in/v1alpha1
+# metadata:
+#   name: lsg.ruby-dev.configuration.module.upi-interest-program.interest-program
+#   labels:
+#     rrsd.zetaapps.in/day: day-zero
+#   namespace: ruby-dev
+#   annotations:
+#     zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/interest-programs/interest-program-upi-interest-program.yaml","tenantCode":"lsg"}'
+# spec:
+#   metadata:
+#     id: ruby-dev.configuration.module.upi-interest-program.interest-program
+#     name: upi-interest-program
+#     description: upi-interest-program Interest Program
+#     requester:
+#       module: ruby-dev
+#       moduleVersion: 0.0.1
+#     tenantId: '600309'
+#     tenantCode: lsg
+#   config:
+#     format: YAML
+#     schemaUrl: http://localhost
+#     schemaInlineContent: |
+#       {"properties":{"amountTiers":{"items":{"properties":{"fromAmount":{"type":"number"},"tenureTier":{"items":{"properties":{"fromTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"interestRate":{"type":"number"},"toTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"}},"type":"object"},"type":"array"},"toAmount":{"type":"number"}},"type":"object"},"type":"array"},"currency":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"rateSpecificationCode":{"type":"string"},"status":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"}
+#     key: key
+#     isEncrypted: false
+#     useVault: false
+#     value:
+#       attributes: {}
+#       code: IPG<CC>00<XXXX>01
+#       description: upi-interest-program Interest Program
+#       interestRules:
+#       - applicableTo:
+#           maxValueThreshold: 999999999999
+#           minValueThreshold: 0
+#           postingCategories:
+#           - RetailPrincipalUnbilled
+#           - RetailInterestUnbilled
+#           - AnnualFeeUnbilled
+#           - AddOnUserAnnualFeeUnbilled
+#           - AccountSetupFeeUnbilled
+#           - LateFeeUnbilled
+#           - OverlimitFeeUnbilled
+#           - InsufficientFundFeeUnbilled
+#           - RetailServiceFeeUnbilled
+#           - RetailMiscFeeUnbilled
+#           transactionSelectionCriterion: function evaluate(ruleContext) {return true;}
+#         modelParameters:
+#           gracePeriodType: POLICY
+#           margin: 22.24
+#           rateTable:
+#             code: IRT<CC>00<XXXX>
+#             version: 1
+#         precedenceCode: 100
+#         ruleId: RULE01
+#       - applicableTo:
+#           maxValueThreshold: 9999999999
+#           minValueThreshold: 0
+#           postingCategories:
+#           - CashPrincipalUnbilled
+#           - CashInterestUnbilled
+#           - CashAdvanceFeeUnbilled
+#           transactionSelectionCriterion: function evaluate(ruleContext) {return true;}
+#         modelParameters:
+#           gracePeriod: 0
+#           gracePeriodType: ABSOLUTE
+#           margin: 24.24
+#           rateTable:
+#             code: IRT<CC>00<XXXX>
+#             version: 2
+#         precedenceCode: 110
+#         ruleId: RULE02
+#       name: upi-interest-program Interest Program
+#       precedenceCode: '100'
+#       type: General
+#       validFrom: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
+#       validUntil: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
+#   viewConfig:
+#     angelosSchema:
+#       view: {}
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby-dev.configuration.module.upi-interest-program.interest-program
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  namespace: ruby-dev
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/interest-programs/interest-program-upi-interest-program.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby-dev.configuration.module.upi-interest-program.interest-program
+    name: upi credit line-interest-program
+    description: ABC Bank UPI Credit line Interest Program
+    requester:
+      module: ruby-dev
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"amountTiers":{"items":{"properties":{"fromAmount":{"type":"number"},"tenureTier":{"items":{"properties":{"fromTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"interestRate":{"type":"number"},"toTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"}},"type":"object"},"type":"array"},"toAmount":{"type":"number"}},"type":"object"},"type":"array"},"currency":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"rateSpecificationCode":{"type":"string"},"status":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      attributes: {}
+      code: IPGUPI0001
+      description: UPI Credit Line Interest Program
+      interestRules:
+      - applicableTo:
+          maxValueThreshold: 999999999999
+          minValueThreshold: 0
+          postingCategories:
+          - RetailPrincipalUnbilled
+          - RetailInterestUnbilled
+          - LateFeeUnbilled
+          - RetailServiceFeeUnbilled
+          - RetailMiscFeeUnbilled
+          transactionSelectionCriterion: function evaluate(ruleContext) { var mcc = ruleContext && ruleContext.postingInfo && ruleContext.postingInfo.postingAttributes && ruleContext.postingInfo.postingAttributes['super-card.mcc']; return ['8011','8041','8021'].indexOf(mcc) !== -1; }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 15.00
+          rateTable:
+            code: IRTUPI0001
+            version: 1
+        precedenceCode: 100
+        ruleId: RULE_MEDICAL
+      - applicableTo:
+          maxValueThreshold: 999999999999
+          minValueThreshold: 0
+          postingCategories:
+          - RetailPrincipalUnbilled
+          - RetailInterestUnbilled
+          - LateFeeUnbilled
+          - RetailServiceFeeUnbilled
+          - RetailMiscFeeUnbilled
+          transactionSelectionCriterion: function evaluate(ruleContext) { var mcc = ruleContext && ruleContext.postingInfo && ruleContext.postingInfo.postingAttributes && ruleContext.postingInfo.postingAttributes['super-card.mcc']; return ['5732','5733','5722','5211'].indexOf(mcc) !== -1; }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 27.00
+          rateTable:
+            code: IRTUPI0002
+            version: 1
+        precedenceCode: 110
+        ruleId: RULE_ELECTRONICS
+      - applicableTo:
+          maxValueThreshold: 999999999999
+          minValueThreshold: 0
+          postingCategories:
+          - RetailPrincipalUnbilled
+          - RetailInterestUnbilled
+          - LateFeeUnbilled
+          - RetailServiceFeeUnbilled
+          - RetailMiscFeeUnbilled
+          transactionSelectionCriterion: function evaluate(ruleContext) { return true; }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 24.50
+          rateTable:
+            code: IRTUPI0003
+            version: 1
+        precedenceCode: 200
+        ruleId: RULE_upi
+      name: UPI Credit Line Interest Program
+      precedenceCode: '100'
+      type: General
+      validFrom: '2026-04-17T00:00:00.000+05:30'
+      validUntil: '2999-12-31T23:59:59.999+05:30'
+  viewConfig:
+    angelosSchema:
+      view: {}

@@ -1,0 +1,64 @@
+kind: RubyDelinquencyPolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby-dev.rubydelinquencypolicy.upi-delinquency-policy
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  namespace: ruby-dev
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-delinquency-policies/ruby-delinquency-policy-upi-delinquency-policy.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby-dev.rubydelinquencypolicy.upi-delinquency-policy
+    name: upi-delinquency-policy
+    description: UPI Credit Line Delinquency Policy
+    requester:
+      module: ruby-dev
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  code: DLQUPI00001
+  delinquencyRules:
+    - description: Delinquency level 1
+      fromDays: 1
+      level: 1
+      toDays: 30
+    - description: Delinquency level 2
+      fromDays: 31
+      level: 2
+      toDays: 60
+    - description: Delinquency level 3
+      fromDays: 61
+      level: 3
+      toDays: 90
+    - description: Delinquency level 4
+      fromDays: 91
+      level: 4
+      toDays: 120
+    - description: Delinquency level 5
+      fromDays: 121
+      level: 5
+      toDays: 150
+    - description: Delinquency level 6
+      fromDays: 151
+      level: 6
+      toDays: 180
+    - description: Delinquency level 7
+      fromDays: 181
+      level: 7
+      toDays: 210
+    - description: Delinquency level 8
+      fromDays: 211
+      level: 8
+      toDays: 240
+  description:  upi-delinquency-policy UPI Credit Line Delinquency Policy
+  name: upi-delinquency-policy UPI Credit Line Delinquency Policy
+  paymentVariance:
+    amount: 0
+    currency: INR
+  paymentVarianceForLateFee:
+    amount: 0
+    currency: INR
+  templateCode: IN-credit
+  validFrom: 2026-04-17T00:00:00.000+05:30
+  validTill: 2999-12-31T23:59:59.999+05:30
