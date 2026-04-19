@@ -32,16 +32,16 @@ spec:
       description: Credit Line on UPI Loan Account Product for 1111
       policies:
         accountClosurePolicy:
-          code: ACPUPI00001
+          code: ACPIN00001
           version: 1
         accountNumberGenerationPolicy:
-          code: ANGUPI00001
+          code: ANGIN00001
           version: 1
         amortizationPolicy:
           code: EAPIN005001
           version: 1
         interestPolicy:
-          code: INTUPI0001
+          code: INTIN0001
           version: 1
         repaymentPolicy:
           code: ERPIN008001
