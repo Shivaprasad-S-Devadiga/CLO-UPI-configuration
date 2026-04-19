@@ -1,16 +1,16 @@
 kind: Configuration
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.emerald.configuration.product.1111.default-ap.account-product
+  name: lsg.emerald.configuration.product.1111.clou-upi.account-product
   labels:
     rrsd.zetaapps.in/day: day-one
   annotations:
     zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"CLO-UPI-configuration/product_PRDUS001111/provider_emerald/account-products/account-product-default-ap.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: emerald.configuration.product.1111.default-ap.account-product
-    name: default-ap
-    description: UPI credit-line Account Product for 001111
+    id: emerald.configuration.product.1111.clou-upi.account-product
+    name: CLO UPI Payment Product for 1111
+    description: Credit Line on UPI Account Product for 1111
     requester:
       module: emerald
       moduleVersion: 0.0.1
@@ -27,24 +27,24 @@ spec:
     value:
       attributes:
         key1: value1
-      code: RAPUS001111
-      description: ABC Bank UPI credit line account product
-      name: ABC Bank UPI Credit Line
+      code: RAPIN001111
+      name: BankABC Emerald Account Product
+      description: Credit Line on UPI Loan Account Product for 1111
       policies:
         accountClosurePolicy:
-          code: accountClosurePolicy
+          code: ACPUPI00001
           version: 1
         accountNumberGenerationPolicy:
-          code: accountNumberGenerationPolicy
+          code: ANGUPI00001
           version: 1
         amortizationPolicy:
-          code: amortizationPolicy
+          code: EAPIN005001
           version: 1
         interestPolicy:
-          code: EIPUS008001
+          code: INTUPI0001
           version: 1
         repaymentPolicy:
-          code: repaymentPolicy
+          code: ERPIN008001
           version: 1
       productPreferences:
         defaultTenure:

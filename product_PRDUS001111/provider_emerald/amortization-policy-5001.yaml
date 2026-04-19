@@ -1,0 +1,31 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: EmeraldAmortizationPolicy
+metadata:
+  name: lsg.emerald.emeraldamortizationpolicy.5001
+spec:
+  metadata:
+    id: emerald.emeraldamortizationpolicy.5001
+    name: Infinia COA Emerald Amortization Policies
+    description: Infinia COA Emerald Amortization Policies
+    requester:
+      module: emerald-module-e2e
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  validFrom: '2026-03-16T00:00:00.000+05:30'
+  validTill: '2999-12-31T00:00:00.000+05:30'
+  name: Amortization Policy
+  description: Amortization Policy
+  code: EAPIN005001
+  epiMethod: REDUCING_BALANCE
+  installmentFrequency: MONTHLY
+  paymentType: ARREARS
+  reAmortizationType: INSTALLMENT
+  brokenPeriodApplicable: true
+  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION
+  roundingRule: NEAR
+  emiAmountRoundingRule: NEAR
+  repaymentScheduleType: EPI
+  autoReAmortizationAllowed: true
+  residualAmountValidationAllowed: false
+  templateCode: in-credit
