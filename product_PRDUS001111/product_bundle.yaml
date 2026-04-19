@@ -1,7 +1,7 @@
 kind: Configuration
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.aether.configuration.product.9978.bundle.product
+  name: lsg.aether.configuration.product.1111.bundle.product
   labels:
     rrsd.zetaapps.in/day: day-one
   annotations:
@@ -9,8 +9,8 @@ metadata:
 spec:
   metadata:
     id: aether.configuration.product.1111.bundle.product
-    name: Upi line on credit bundle for 1111
-    description: Default Product Bundle
+    name: Default Product Bundle 
+    description: Default Product Bundle 
     requester:
       module: aether
       moduleVersion: 0.0.1
@@ -27,9 +27,8 @@ spec:
     value:
       code: PRDIN001111
       codeSuffix: '1111'
-      description: Upi line on credit bundle for 1111
-      imageUrl: https://card-program-files.s3.amazonaws.com/optimawebviews-bucket/Starbucks_1.jpg
-      name: Upi line on credit bundle for 1111
+      description: Default Product Bundle 
+      name: Default Product Bundle 
       source:
         clonedFrom: Template
         clonedProduct: PRDIN009978
@@ -38,4 +37,4 @@ spec:
     angelosSchema:
       view:
         entityId: angelos.aether.product
-    displayName: Upi line on credit bundle for 1111
+    displayName: Default Product Bundle 
