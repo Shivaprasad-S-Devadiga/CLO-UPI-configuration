@@ -31,7 +31,7 @@ spec:
       description: Bundle consists of an account product, loan account products, payment product, and a notification product.
       issueInactiveCard: true
       name: default bundle definition 1111
-      picURL: https://card-program-files.s3.amazonaws.com/partnergiftcard.png
+      picURL: https://cdn.corenexis.com/files/c/3691863720.png
       productMappings:
         accountProduct:
           productCode: RAPIN001111

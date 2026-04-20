@@ -10,7 +10,7 @@ spec:
   metadata:
     id: aether.configuration.product.1111.bundle.product
     name: Default Product Bundle 
-    description: Default Product Bundle 
+    description: Default Product Bundle
     requester:
       module: aether
       moduleVersion: 0.0.1
@@ -27,7 +27,8 @@ spec:
     value:
       code: PRDIN001111
       codeSuffix: '1111'
-      description: Default Product Bundle 
+      description: Default Product Bundle
+      imageUrl: https://cdn.corenexis.com/files/c/3691863720.png 
       name: Default Product Bundle 
       source:
         clonedFrom: Template
