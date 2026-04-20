@@ -9,8 +9,8 @@ metadata:
 spec:
   metadata:
     id: emerald.configuration.product.1111.clou-upi.account-product
-    name: CLO UPI Payment Product for 1111
-    description: Credit Line on UPI Account Product for 1111
+    name: CLO UPI Loan Account  Product for 1111
+    description: Credit Line on UPI  Loan Account Product for 1111
     requester:
       module: emerald
       moduleVersion: 0.0.1
@@ -28,20 +28,20 @@ spec:
       attributes:
         key1: value1
       code: RAPIN001111
-      name: BankABC Emerald Account Product
+      name: BankABC Emerald Loan Account Product
       description: Credit Line on UPI Loan Account Product for 1111
       policies:
         accountClosurePolicy:
-          code: ACPIN00001
+          code: ECPIN009001
           version: 1
         accountNumberGenerationPolicy:
-          code: ANGIN00001
+          code: ENGIN005001
           version: 1
         amortizationPolicy:
           code: EAPIN005001
           version: 1
         interestPolicy:
-          code: INTIN0001
+          code: EIPIN009001
           version: 1
         repaymentPolicy:
           code: ERPIN008001
@@ -54,10 +54,10 @@ spec:
         issuanceStartDate: '2026-04-17'
         issuanceEndDate: '2999-12-31'
         maxLoanAmount:
-          amount: 500000
+          amount: 5000000
           currency: INR
         minLoanAmount:
-          amount: 1000
+          amount: 10000
           currency: INR
         maxTenure:
           days: 0
