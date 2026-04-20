@@ -5,8 +5,8 @@ metadata:
 spec:
   metadata:
     id: emerald.emeraldamortizationpolicy.5001
-    name: Infinia COA Emerald Amortization Policies
-    description: Infinia COA Emerald Amortization Policies
+    name: Credit line on UPI COA Emerald Amortization Policies
+    description: Credit line on UPI Emerald Amortization Policies
     requester:
       module: emerald-module-e2e
       moduleVersion: 0.0.1
