@@ -23,4 +23,4 @@ spec:
     version: 1
   validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T00:00:00.000+05:30'
-  templateCode: us-credit
+  templateCode: in-credit

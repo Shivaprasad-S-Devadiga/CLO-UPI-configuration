@@ -1,0 +1,50 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.statement.configuration.product.1111.policy.statement-policy
+  labels:
+    rrsd.zetaapps.in/day: day-one
+    rrsd.zetaapps.in/space: aws-default-pp-mumbai
+  namespace: statement
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"/.defaults/product_configurations/provider_statement/tree/root/t0/product_configurations/provider_statement/statement-policy.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: statement.configuration.product.1111.policy.statement-policy
+    name: policy
+    description: Statement Policy V2 for 1111
+    requester:
+      module: statement
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"attributePolicy":{"type":"string"},"forceStatementGenerationRules":{"type":"string"},"lockbox":{"type":"object"},"metaData":{"type":"object"},"passwordPolicy":{"type":"string"},"physicalStatementThreshold":{"type":"string"},"skipStatementRules":{"type":"string"},"templateCode":{"type":"string"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      forceStatementGenerationRules: function forceStatementGenerationRules(context) { return context.totalPostedUpiTransactions > 0; }
+      metaData:
+        VB: https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.0.27/abc/digital.html
+        VXL: https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.0.27/abc/digital.html
+      passwordPolicy: function password(context) { return context.customerIdLast4 || context.customerDobHash; }
+      physicalStatementThreshold: '999999999'
+      skipStatementRules: |
+        function skipStatementRules(context) {
+          if (context.totalPostedUpiTransactions == '0' &&
+            context.totalClosingBalance == '0' &&
+            context.feesCharged == '0' &&
+            context.interestCharged == '0'
+          ) {
+            return true;
+          }
+          return false;
+        }
+      templateCode: https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.5.0/abc/digital.html,https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.5.0/abc/mail.html
+  viewConfig:
+    angelosSchema:
+      view: {}
