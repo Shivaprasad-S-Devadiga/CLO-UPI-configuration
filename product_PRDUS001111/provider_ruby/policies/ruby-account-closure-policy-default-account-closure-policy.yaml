@@ -10,14 +10,14 @@ metadata:
 spec:
   metadata:
     id: ruby-dev.rubyaccountclosurepolicy.upi-account-closure-policy
-    name: upi-account-closure-policy
+    name: ruby-account-closure-policy
     description: UPI Credit Line account closure policy
     requester:
       module: ruby-dev
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  code: ACPUPI00001
+  code: ACPIN00001
   description: UPI Credit Line account closure policy
   name: UPI Credit Line account closure policy
   reason:
@@ -33,6 +33,6 @@ spec:
     reasonCode: BankInitiated
   - maxDebitBalForWriteOff: 0
     reasonCode: Others
-  templateCode: IN-credit
+  templateCode: in-credit
   validFrom: '2026-04-17T00:00:00.000+05:30'
   validTill: '2999-12-31T23:59:59.999+05:30'

@@ -1,0 +1,32 @@
+kind: RubyCouponAccountingPolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.rubycouponaccountingpolicy.module.8005
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_ruby/coupon-accounting-policies/ruby-coupon-accounting-policy_8005.yaml","tenantCode":"lsg"}'
+  namespace: ruby
+spec:
+  metadata:
+    id: ruby.rubycouponaccountingpolicy.module.8005
+    name: ruby.rubycouponaccountingpolicy.module.8005
+    description: ruby.rubycouponaccountingpolicy.module.8005
+    tenantId: '600309'
+    tenantCode: lsg
+  validFrom: '2000-01-01T00:00:00.000-07:00'
+  validTill: '2099-01-01T00:00:00.000-07:00'
+  name: Coupon Accouting
+  description: Coupon Accouting
+  code: CAPIN00001
+  processAsynchronously: true
+  allowPartialRedemption: true
+  canBeOverriddenPerCard: false
+  denominations: []
+  termProviders:
+    - interest
+  couponRedeemer: RubyCouponRedeemer
+  onExpiryCreditToAccount: ''
+  maxCouponsAllowedPerIssuance: 10
+  onPartiallyRedeemedToAccount: ''
+  templateCode: in-credit

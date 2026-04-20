@@ -25,64 +25,64 @@ spec:
     isEncrypted: false
     useVault: false
     value:
-      accountProductFamilyCode: APFUPI00001
+      accountProductFamilyCode: APFIN00001
       # channelCodes:
       #   - CHN<CC>ZZ11<XX>
-      coaCode: COAUPI00001
-      code: RAPUPI009978
+      coaCode: COAIN00001
+      code: RAPIN009978
       description: family-upi-account-product Ruby Account Product
       name: family-upi-account-product Ruby Account Product
       policies:
         accountClosurePolicy:
-          code: ACPUPI00001
+          code: ACPIN00001
           version: 0.0.1
         accountNumberGenerationPolicy:
-          code: ANGUPI00001
+          code: ANGIN00001
           version: 0.0.1
         couponAccountingPolicy:
-          code: CAP<CC>00<XXXX>
+          code: CAPIN00001
           version: 0.0.1
         delinquencyPolicy:
-          code: DLQUPI00001
+          code: DLQIN00001
           version: 0.0.1
         dormancyPolicy:
-          code: DORUPI00001
+          code: DORIN00001
           version: 0.0.1
         feePolicies:
           lateFee:
-            code: LPF<CC>00<XXXX>
+            code: LPFIN00001
             version: 0.0.1
         interestPolicy:
-          code: INTUPI0001
+          code: INTIN0001
           version: 0.0.1
         madPolicy:
-          code: MADUPI00001
+          code: MADIN00001
           version: 0.0.1
         repaymentPolicy:
-          code: REP<CC>00<XXXX>
+          code: REPIN00001
           version: 0.0.1
         spendLimitPolicy:
-          code: SPL<CC>00<XXXX>
-          version: <LONG-Eg-5852047285872902714>
+          code: SPLIN001007
+          version: 0.0.1
         statementPolicy:
           code: STM<CC>00<XXXX>
           version: 0.0.1
       productPreferences:
-        issuanceEndDate: YYYY-MM-DD
-        issuanceStartDate: YYYY-MM-DD
+        issuanceEndDate: 2026-04-17T00:00:00.000+05:30
+        issuanceStartDate: 2999-12-31T23:59:59.999+05:30
         maxCreditLimit:
           amount: 100000000
-          currency: <CUR>
+          currency: INR
         minCreditLimit:
-          amount: 1000000
-          currency: <CUR>
+          amount: 10000
+          currency: INR
         overLimitPercent: 0
       programs:
-        - code: IPG<CC>00<XXXX>01
+        - code: IPGIN0001
           type: General
-          validFrom: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
-          validTill: YYYY-MM-DDTHH:MM:SS.XXX+HH:MM
-      templateCode: us-credit
+          validFrom: 2026-04-17T00:00:00.000+05:30
+          validTill: 2999-12-31T23:59:59.999+05:30
+      templateCode: in-credit
   viewConfig:
     angelosSchema:
       view: {

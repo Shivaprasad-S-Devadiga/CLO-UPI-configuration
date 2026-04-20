@@ -107,7 +107,7 @@ spec:
     useVault: false
     value:
       attributes: {}
-      code: IPGUPI0001
+      code: IPGIN0001
       description: UPI Credit Line Interest Program
       interestRules:
       - applicableTo:
