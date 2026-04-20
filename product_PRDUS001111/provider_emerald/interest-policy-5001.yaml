@@ -1,0 +1,117 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: EmeraldInterestPolicy
+metadata:
+  name: lsg.emerald.emeraldinterestpolicy.9001
+spec:
+  metadata:
+    id: emerald.emeraldinterestpolicy.9001
+    name: Emerald Interest Policy - Credit Line on UPI
+    description: Emerald Interest Policy for Credit Line on UPI product
+    requester:
+      module: emerald-module-e2e
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    # CHANGED: tenant code switched from 'lsg' (US) to 'inaf' (India Affluent).
+    tenantCode: lsg
+  name: Emerald Interest Policy - Credit Line on UPI
+  code: EIPIN009001
+  description: Emerald Interest Policy for Credit Line on UPI product
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  # UNCHANGED: far-future validTill; correctly formatted.
+  validTill: '2999-12-31T00:00:00.000+05:30'
+
+  # UNCHANGED: interest on credit entries (e.g., repayments reducing balance)
+  # takes effect from the VALUE DATE of the transaction, not posting date.
+  # ValueDate is the customer-friendly and RBI-aligned choice.
+  creditEffectiveFrom: ValueDate
+
+  # UNCHANGED: interest on debit entries (e.g., new charges increasing balance)
+  # also effective from VALUE DATE. Keeps accrual timing symmetric and fair.
+  debitEffectiveFrom: ValueDate
+
+  interestAccrual:
+    # UNCHANGED: interest rate is applied at ACCOUNT level (not loan or
+    # transaction level). Standard for credit-card EMI where the rate is
+    # determined at issuance/onboarding. If your affluent product has
+    # per-loan promotional rates, this flag may need to flip to false -
+    # confirm with product.
+    accountLevelRate: true
+
+    # Day-count methods control how the daily interest numerator/denominator
+    # is computed across different lifecycle events. Small differences here
+    # (e.g., 360 vs 365) change disclosed APR by several basis points.
+    dayCountMethods:
+      - lifeCycleEvent: firstInstallment
+        # CHANGED: ACTUAL/360_HDFC -> ACTUAL/365. ACTUAL/365 is the widely
+        # accepted retail-credit day-count basis in India and is the cleanest
+        # for RBI APR disclosures. See header note - retain ACTUAL/360_HDFC
+        # if the product requires HDFC-specific clearing conventions.
+        dayCountMethod: ACTUAL/365
+      - lifeCycleEvent: preClosure
+        # CHANGED: same rationale as firstInstallment. Pre-closure interest
+        # calculation on actual-days-elapsed / 365 is customer-friendly and
+        # standard in Indian retail credit.
+        dayCountMethod: ACTUAL/365
+      - lifeCycleEvent: reAmortization
+        # UNCHANGED: 30/360G (30-day months, 360-day year, German variant) -
+        # appropriate for scheduled re-amortization where the calculation
+        # should align with the EPI (equated installment) math in the
+        # Amortization Policy. Keeping this consistent avoids schedule drift.
+        dayCountMethod: 30/360G
+      - lifeCycleEvent: default
+        # UNCHANGED: 30/360G for the default / steady-state case. Matches the
+        # EPI schedule generation in the Amortization Policy - both must use
+        # the same basis to avoid rounding drift between expected and actual
+        # interest accrual.
+        dayCountMethod: 30/360G
+
+    # UNCHANGED: NEAR rounding - round accrued interest to the nearest unit.
+    # Consistent with the Amortization Policy's roundingRule.
+    roundingRule: NEAR
+
+  interestLiquidation:
+    # UNCHANGED: voucher code that identifies the GL posting template for
+    # liquidating (moving from accrued to billed) interest. This code must
+    # exist in the India tenant's voucher catalog - verify with the COA /
+    # ledger team. If the India tenant uses a different voucher naming
+    # convention, update this accordingly.
+    liquidationVoucherCode: LOAN_INTEREST_LIQUIDATION
+
+  interestRules:
+    # One rule block per interest component. "Normal interest" = the base
+    # scheduled EMI interest (as opposed to penalty/overdue interest, which
+    # would be a separate block if your affluent product charges it).
+    - balanceType: DAILY_BALANCE
+      # UNCHANGED: DAILY_BALANCE - interest accrues on the balance as of
+      # end-of-day, every day. Industry-standard for credit-card EMI.
+      # Alternative (AVERAGE_DAILY_BALANCE) is used in some revolving-credit
+      # products but not for scheduled EMI.
+      description: Normal Interest Base
+      # UNCHANGED: internal component name. Used in engine routing and logs.
+      interestComponent: NORMAL_INTEREST_BASE
+      liquidation:
+        # UNCHANGED: BillUnconditional - accrued interest is moved to the
+        # customer's bill at each billing cycle regardless of payment state.
+        # Standard for EMI; the alternative (conditional liquidation) is for
+        # products where interest is waived on certain conditions.
+        model: BillUnconditional
+        postingCategories:
+          # UNCHANGED: GL posting categories define which account heads the
+          # interest lands in at each stage of its lifecycle:
+          #   accrual  -> accrued-but-not-billed interest (daily accumulation)
+          #   billing  -> interest actually billed to the customer
+          #   penalty  -> penal interest if loan goes overdue
+          # These categories must EXIST in the India tenant's chart of
+          # accounts. Verify with the COA team; if the India tenant uses
+          # different category codes, map accordingly.
+          accrualPostingCategory: ACCRUEDINTERESTNORMAL
+          billingPostingCategory: NORMALINTEREST
+          penaltyPostingCategory: PENALTYINTERESTBASE
+      # UNCHANGED: top-level posting category for this interest rule - the
+      # bucket the interest is attributed to in reporting.
+      postingCategory: NORMALINTERESTBASE
+
+  # CHANGED: template switched from 'us-credit' to 'in-credit' so the policy
+  # binds to the India credit-card product template (GST on interest, RBI
+  # APR disclosure, INR currency).
+  templateCode: in-credit
