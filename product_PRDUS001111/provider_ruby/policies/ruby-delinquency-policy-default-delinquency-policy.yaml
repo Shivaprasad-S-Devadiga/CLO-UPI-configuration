@@ -1,23 +1,23 @@
 kind: RubyDelinquencyPolicy
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.ruby-dev.rubydelinquencypolicy.upi-delinquency-policy
+  name: lsg.ruby.rubydelinquencypolicy.upi-delinquency-policy
   labels:
     rrsd.zetaapps.in/day: day-zero
-  namespace: ruby-dev
+  namespace: ruby
   annotations:
-    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-delinquency-policies/ruby-delinquency-policy-upi-delinquency-policy.yaml","tenantCode":"lsg"}'
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby/tree/root/t0/module_configurations/module_ruby/ruby-delinquency-policies/ruby-delinquency-policy-upi-delinquency-policy.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: ruby-dev.rubydelinquencypolicy.upi-delinquency-policy
+    id: ruby.rubydelinquencypolicy.upi-delinquency-policy
     name: upi-delinquency-policy
     description: UPI Credit Line Delinquency Policy
     requester:
-      module: ruby-dev
+      module: ruby
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  code: DLQUPI00001
+  code: DLQIN00001
   delinquencyRules:
     - description: Delinquency level 1
       fromDays: 1
@@ -59,6 +59,6 @@ spec:
   paymentVarianceForLateFee:
     amount: 0
     currency: INR
-  templateCode: IN-credit
-  validFrom: 2026-04-17T00:00:00.000+05:30
+  templateCode: in-credit
+  validFrom: 2026-01-01T00:00:00.000+05:30
   validTill: 2999-12-31T23:59:59.999+05:30

@@ -23,5 +23,5 @@ spec:
   defaultLimitsForNewCLOU:
     - category: DOMESTIC_ECOM
       limitType: PERTRANSACTION
-      limitValue: '100000000'
+      limitValue: '10000'
   templateCode: in-credit

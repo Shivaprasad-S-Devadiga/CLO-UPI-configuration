@@ -5,7 +5,7 @@ metadata:
   labels:
     rrsd.zetaapps.in/day: day-zero
   annotations:
-    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_ruby/coupon-accounting-policies/ruby-coupon-accounting-policy_8005.yaml","tenantCode":"lsg"}'
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"module_configurations/module_ruby/coupon-accounting-policies/ruby-coupon-accounting-policy_8005.yaml","tenantCode":"lsg"}'
   namespace: ruby
 spec:
   metadata:
@@ -14,8 +14,8 @@ spec:
     description: ruby.rubycouponaccountingpolicy.module.8005
     tenantId: '600309'
     tenantCode: lsg
-  validFrom: '2000-01-01T00:00:00.000-07:00'
-  validTill: '2099-01-01T00:00:00.000-07:00'
+  validFrom: '2026-01-01T00:00:00.000-07:00'
+  validTill: '2999-12-31T00:00:00.000-07:00'
   name: Coupon Accouting
   description: Coupon Accouting
   code: CAPIN00001

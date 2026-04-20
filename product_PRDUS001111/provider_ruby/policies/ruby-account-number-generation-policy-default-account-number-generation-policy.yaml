@@ -1,29 +1,29 @@
 kind: RubyAccountNumberGenerationPolicy
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.ruby-dev.rubyaccountnumbergenerationpolicy.upi-account-number-generation-policy
+  name: lsg.ruby.rubyaccountnumbergenerationpolicy.upi-account-number-generation-policy
   labels:
     rrsd.zetaapps.in/day: day-zero
-  namespace: ruby-dev
+  namespace: ruby
   annotations:
     zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-account-number-generation-policies/ruby-account-number-generation-policy-upi-account-number-generation-policy.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: ruby-dev.rubyaccountnumbergenerationpolicy.upi-account-number-generation-policy
+    id: ruby.rubyaccountnumbergenerationpolicy.upi-account-number-generation-policy
     name: upi-account-number-generation-policy
     description: upi-account-number-generation-policy Ruby UPI Account Number Generation
       Policy
     requester:
-      module: ruby-dev
+      module: ruby
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  code: ANGUPI00001
+  code: ANGIN00001
   customGeneratorPlaceholders:
     productId: '101'
   description: upi-account-number-generation-policy Ruby UPI Account Number Generation
     Policy
   name: upi-account-number-generation-policy Ruby UPI Account Number Generation Policy
-  templateCode: IN-credit
-  validFrom: '2026-04-17T00:00:00.000+05:30'
+  templateCode: in-credit
+  validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T23:59:59.999+05:30'

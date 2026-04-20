@@ -1,16 +1,16 @@
 kind: Configuration
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.ruby.configuration.product.9978.upi-account-product.account-product
+  name: lsg.ruby.configuration.product.9978.clou-upi-account-product.account-product
   labels:
     rrsd.zetaapps.in/day: day-one
   annotations:
-    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-product-familes/account-product-family-upi-account-product.yaml","tenantCode":"lsg"}'
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-product-familes/account-product-family-clou-upi-account-product.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: ruby.configuration.product.9978.upi-account-product.account-product
-    name: upi-account-product
-    description: family-upi-account-product Account Product for 9978
+    id: ruby.configuration.product.9978.clou-upi-account-product.account-product
+    name: clou-upi-account-product
+    description: family-clou-upi-account-product Account Product for 9978
     requester:
       module: ruby
       moduleVersion: 0.0.1
@@ -25,13 +25,13 @@ spec:
     isEncrypted: false
     useVault: false
     value:
-      accountProductFamilyCode: APFIN00001
+      accountProductFamilyCode: APFIN009978
       # channelCodes:
       #   - CHN<CC>ZZ11<XX>
-      coaCode: COAIN00001
+      coaCode: COAIN600309
       code: RAPIN009978
-      description: family-upi-account-product Ruby Account Product
-      name: family-upi-account-product Ruby Account Product
+      description: family-clou-upi-account-product Ruby Account Product
+      name: family-clou-upi-account-product Ruby Account Product
       policies:
         accountClosurePolicy:
           code: ACPIN00001
@@ -71,7 +71,7 @@ spec:
         issuanceEndDate: 2026-04-17T00:00:00.000+05:30
         issuanceStartDate: 2999-12-31T23:59:59.999+05:30
         maxCreditLimit:
-          amount: 100000000
+          amount: 500000
           currency: INR
         minCreditLimit:
           amount: 10000
@@ -80,7 +80,7 @@ spec:
       programs:
         - code: IPGIN0001
           type: General
-          validFrom: 2026-04-17T00:00:00.000+05:30
+          validFrom: 2026-01-01T00:00:00.000+05:30
           validTill: 2999-12-31T23:59:59.999+05:30
       templateCode: in-credit
   viewConfig:

@@ -1,0 +1,36 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.configuration.product.9978.clou-upi-account-product-family.account-product-family
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-product-familes/account-product-family-clou-upi-account-product-family.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby.configuration.product.9978.clou-upi-account-product-family.account-product-family
+    name: clou-upi-account-product-family
+    description: clou-upi-account-product-family Ruby Account Product Family
+    requester:
+      module: ruby
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"coaCode":{"type":"string"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"parentCoaNodeCode":{"type":"string"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      coaCode: COAIN600309
+      code: APFIN009978
+      description: clou-upi-account-product-family Ruby Account Product Family
+      name: clou-upi-account-product-family Ruby Account Product Family
+      parentCoaNodeCode: COAIN600309_Node_Revolving_Credit
+  viewConfig:
+    angelosSchema:
+      view: {
+        }

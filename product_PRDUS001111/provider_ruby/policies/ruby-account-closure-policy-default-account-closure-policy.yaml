@@ -1,25 +1,25 @@
 kind: RubyAccountClosurePolicy
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.ruby-dev.rubyaccountclosurepolicy.upi-account-closure-policy
+  name: lsg.ruby-dev.rubyaccountclosurepolicy.clou-upi-account-closure-policy
   labels:
     rrsd.zetaapps.in/day: day-zero
-  namespace: ruby-dev
+  namespace: ruby
   annotations:
-    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-upi-pp-mumbai.lsg.git","filePath":"/.upis/module_configurations/module_ruby-dev/tree/root/t0/module_configurations/module_ruby-dev/ruby-account-closure-policies/ruby-account-closure-policy-upi-account-closure-policy.yaml","tenantCode":"lsg"}'
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/module_configurations/module_ruby/tree/root/t0/module_configurations/module_ruby/ruby-account-closure-policies/ruby-account-closure-policy-clou-upi-account-closure-policy.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: ruby-dev.rubyaccountclosurepolicy.upi-account-closure-policy
+    id: ruby.rubyaccountclosurepolicy.clou-upi-account-closure-policy
     name: ruby-account-closure-policy
-    description: UPI Credit Line account closure policy
+    description: clou-upi Credit Line account closure policy
     requester:
-      module: ruby-dev
+      module: ruby
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
   code: ACPIN00001
-  description: UPI Credit Line account closure policy
-  name: UPI Credit Line account closure policy
+  description: clou-upi Credit Line account closure policy
+  name: clou-upi Credit Line account closure policy
   reason:
   - maxDebitBalForWriteOff: 500
     reasonCode: Delinquency
@@ -34,5 +34,5 @@ spec:
   - maxDebitBalForWriteOff: 0
     reasonCode: Others
   templateCode: in-credit
-  validFrom: '2026-04-17T00:00:00.000+05:30'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T23:59:59.999+05:30'

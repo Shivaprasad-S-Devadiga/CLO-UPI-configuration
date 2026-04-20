@@ -30,13 +30,6 @@ spec:
       name: CLO UPI Payment Product 1111
       resourceProductCode: RSPINZZ001111
       status: ACTIVE
-      channelCodePaymentCodeMapping:
-        - channelCode: CHNINZZ5901
-          paymentCodes:
-            - PMCINZZ009912906
-            - PMCINZZ009913906
-            - PMCINZZ009914906
-            - PMCINZZ009914904
   viewConfig:
     angelosSchema:
       view:

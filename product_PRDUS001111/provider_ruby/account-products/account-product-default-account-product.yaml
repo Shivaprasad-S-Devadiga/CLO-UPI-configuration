@@ -1,0 +1,90 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.configuration.product.9978.clou-upi-account-product.account-product
+  labels:
+    rrsd.zetaapps.in/day: day-one
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-products/account-product-clou-upi-account-product.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: ruby.configuration.product.9978.clou-upi-account-product.account-product
+    name: clou-upi-account-product
+    description: clou-upi-account-product Account Product for 9978
+    requester:
+      module: ruby
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: YAML
+    schemaUrl: http://localhost
+    schemaInlineContent: |
+      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"delinquencyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"dormancyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"feePolicies":{"properties":{"annualFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardReplacementFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"purchaseForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"madPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"statementPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"cashLimitPercent":{"type":"number"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"overLimitPercent":{"type":"number"}},"type":"object"},"programs":{"items":{"properties":{"code":{"type":"string"},"type":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"}
+    key: key
+    isEncrypted: false
+    useVault: false
+    value:
+      accountProductFamilyCode: APFIN009978
+      # channelCodes:
+      #   - CHN<CC>ZZ11<XX>
+      coaCode: COAIN600309
+      code: RAPIN009978
+      description: clou-upi-account-product Ruby Account Product
+      name: clou-upi-account-product Ruby Account Product
+      policies:
+        accountClosurePolicy:
+          code: ACPIN00001
+          version: 0.0.1
+        accountNumberGenerationPolicy:
+          code: ANGIN00001
+          version: 0.0.1
+        couponAccountingPolicy:
+          code: CAPIN00001
+          version: 0.0.1
+        delinquencyPolicy:
+          code: DLQIN00001
+          version: 0.0.1
+        dormancyPolicy:
+          code: DORIN00001
+          version: 0.0.1
+        feePolicies:
+          lateFee:
+            code: LPFIN00001
+            version: 0.0.1
+        interestPolicy:
+          code: INTIN0001
+          version: 0.0.1
+        madPolicy:
+          code: MADIN00001
+          version: 0.0.1
+        repaymentPolicy:
+          code: REPIN00001
+          version: 0.0.1
+        spendLimitPolicy:
+          code: SPLIN001007
+          version: 0.0.1
+        statementPolicy:
+          code: STM<CC>00<XXXX>
+          version: <X>
+      productPreferences:
+        # cashLimitPercent: 40
+        issuanceEndDate: YYYY-MM-DD
+        issuanceStartDate: YYYY-MM-DD
+        maxCreditLimit:
+          amount: 500000
+          currency: INR
+        minCreditLimit:
+          amount: 10000
+          currency: INR
+        overLimitPercent: 0
+      programs:
+        - code: IPGIN0001
+          type: General
+          validFrom: 2026-01-01T00:00:00.000+05:30
+          validTill: 2999-12-31T23:59:59.999+05:30
+      templateCode: in-credit
+  viewConfig:
+    angelosSchema:
+      view: {
+        }

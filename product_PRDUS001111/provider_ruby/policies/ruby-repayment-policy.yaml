@@ -1,0 +1,136 @@
+kind: RubyRepaymentPolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.rubyrepaymentpolicy.module.8005
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_ruby/repayment-policies/ruby-repayment-policy_8005.yaml","tenantCode":"lsg"}'
+  namespace: ruby
+spec:
+  metadata:
+    id: ruby.rubyrepaymentpolicy.module.8005
+    name: ruby.rubyrepaymentpolicy.module.8005
+    description: ruby.rubyrepaymentpolicy.module.8005
+    tenantId: '600309'
+    tenantCode: lsg
+  name: Ruby Repayment Policy
+  code: REPIN00001
+  description: Ruby Repayment Policy
+  repaymentAllocation:
+    aboveMAD:
+      allocationModel: HIGHESTTOLOWESTAPR
+      allocationTieBreaker: REPAYMENTSEQUENCE
+      repaymentSequence:
+        - chargeOffStatuses:
+            - '*'
+          repaymentSequenceTieBreaker: FIFO
+          settlementPriority:
+            - LateFeeBilled
+            - InsufficientFundFeeBilled
+            - CollectionFeeBilled
+            - RetailMiscFeeBilled
+            - RetailServiceFeeBilled
+            - RetailInterestBilled
+            - RetailPrincipalBilled
+            - LateFeeUnbilled
+            - InsufficientFundFeeUnbilled
+            - CollectionFeeUnbilled
+            - RetailMiscFeeUnbilled
+            - RetailServiceFeeUnbilled
+            - RetailInterestUnbilled
+            - RetailPrincipalUnbilled
+        - chargeOffStatuses:
+            - FINAL_CHARGEOFF
+          repaymentSequenceTieBreaker: FIFO
+          settlementPriority:
+            - RetailPrincipalBilled
+            - LateFeeBilled
+            - InsufficientFundFeeBilled
+            - RetailMiscFeeBilled
+            - RetailServiceFeeBilled
+            - RetailInterestBilled
+            - RetailPrincipalUnbilled
+            - LateFeeUnbilled
+            - InsufficientFundFeeUnbilled
+            - RetailMiscFeeUnbilled
+            - RetailServiceFeeUnbilled
+            - RetailInterestUnbilled
+    belowMAD:
+      allocationModel: LOWESTTOHIGHESTAPR
+      allocationTieBreaker: REPAYMENTSEQUENCE
+      repaymentSequence:
+        - chargeOffStatuses:
+            - '*'
+          repaymentSequenceTieBreaker: FIFO
+          settlementPriority:
+            - RetailMiscFeeBilled
+            - RetailServiceFeeBilled
+            - RetailInterestBilled
+            - RetailPrincipalBilled
+            - LateFeeUnbilled
+            - InsufficientFundFeeUnbilled
+            - RetailMiscFeeUnbilled
+            - RetailServiceFeeUnbilled
+            - RetailInterestUnbilled
+            - RetailPrincipalUnbilled
+        - chargeOffStatuses:
+            - FINAL_CHARGEOFF
+          repaymentSequenceTieBreaker: FIFO
+          settlementPriority:
+            - RetailPrincipalBilled
+            - LateFeeBilled
+            - InsufficientFundFeeBilled
+            - RetailMiscFeeBilled
+            - RetailServiceFeeBilled
+            - RetailInterestBilled
+            - RetailPrincipalUnbilled
+            - LateFeeUnbilled
+            - InsufficientFundFeeUnbilled
+            - CollectionFeeUnbilled
+            - RetailMiscFeeUnbilled
+            - RetailServiceFeeUnbilled
+            - RetailInterestUnbilled
+  otherCreditAllocation:
+    allocationModel: HIGHESTTOLOWESTAPR
+    allocationTieBreaker: REPAYMENTSEQUENCE
+    repaymentSequence:
+      - chargeOffStatuses:
+          - '*'
+        repaymentSequenceTieBreaker: FIFO
+        settlementPriority:
+          - LateFeeBilled
+          - CollectionFeeBilled
+          - RetailMiscFeeBilled
+          - RetailServiceFeeBilled
+          - RetailInterestBilled
+          - RetailPrincipalBilled
+          - LateFeeUnbilled
+          - CollectionFeeUnbilled
+          - RetailMiscFeeUnbilled
+          - RetailServiceFeeUnbilled
+          - RetailInterestUnbilled
+          - RetailPrincipalUnbilled
+      - chargeOffStatuses:
+          - FINAL_CHARGEOFF
+        repaymentSequenceTieBreaker: FIFO
+        settlementPriority:
+          - RetailPrincipalBilled
+          - LateFeeBilled
+          - CollectionFeeBilled
+          - RetailMiscFeeBilled
+          - RetailServiceFeeBilled
+          - RetailInterestBilled
+          - RetailPrincipalUnbilled
+          - LateFeeUnbilled
+          - CollectionFeeUnbilled
+          - RetailMiscFeeUnbilled
+          - RetailServiceFeeUnbilled
+          - RetailInterestUnbilled
+  repaymentReversal:
+    excessAttributionPostingCategory: RetailPrincipalUnbilled
+    lateFeeAdjustment: true
+    interestAdjustment: true
+  validFrom: '2000-01-01T00:00:00.000-07:00'
+  validTill: '2099-01-01T00:00:00.000-07:00'
+  templateCode: in-credit
