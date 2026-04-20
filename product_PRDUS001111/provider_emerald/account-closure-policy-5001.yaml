@@ -1,0 +1,32 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: EmeraldClosurePolicy
+metadata:
+  name: lsg.emerald.emeraldclosurepolicy.9001
+spec:
+  metadata:
+    id: emerald.emeraldclosurepolicy.9001
+    name: Emerald Closure Policy - Credit Line on UPI 
+    description: Emerald Closure Policy for Credit Line on UPI product
+    requester:
+      module: emerald-module-e2e
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T00:00:00.000+05:30'
+  name: Emerald Closure Policy - Credit Line on UPI 
+  description: Emerald Closure Policy for Credit Line on UPI product
+  code: ECPIN009001
+  allowCancellation: true   # UNCHANGED: customers are allowed to cancel an EMI loan within the cooling
+  coolingPeriodForCancellation: 30 # CHANGED: cooling period reduced from 90 days to 30 days.
+  allowPreClosure: true
+  preClosureLockIn: 0   # Affluent-friendly stance - customer can foreclose anytime.
+  # UNCHANGED: if >= 89.99% of principal has been repaid, the system auto
+  # pre-closes the residual loan (avoids tiny-balance tail). This is a
+  # finance/ops threshold, not region-specific. Confirm with India product
+  # owner whether affluent program wants same threshold.
+  autoPreClosureThresholdPercentage: 89.99
+  # UNCHANGED: on pre-closure, include any accrued-but-unbilled "catch-up"
+  # interest in the final settlement amount. Keeps issuer P&L whole.
+  includeCatchUpInterest: true/Users/pushpranjan/Desktop/tenant_configuration.aws-default-pp-mumbai.lsg/module_configurations/module_emerald/ang-policies
+  templateCode: in-credit
