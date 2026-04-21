@@ -21,8 +21,8 @@ spec:
   coolingPeriodForCancellation: 30
   allowPreClosure: true
   preClosureLockIn: 0  
-  autoPreClosureThresholdPercentage: 97.99
-  includeCatchUpInterest: false //additional
+  autoPreClosureThresholdPercentage: 97.99 #additional
+  includeCatchUpInterest: false #additional
 
   includeCatchUpInterest: false/Users/pushpranjan/Desktop/tenant_configuration.aws-default-pp-mumbai.lsg/module_configurations/module_emerald/ang-policies
   templateCode: in-credit

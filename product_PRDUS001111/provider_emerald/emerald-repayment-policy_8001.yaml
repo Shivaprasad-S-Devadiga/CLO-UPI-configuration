@@ -12,25 +12,25 @@ spec:
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  validFrom: '2026-03-16T00:00:00.000+05:30'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T00:00:00.000+05:30'
   name: Emerald Repayment Policy
   description: Emerald Repayment Policy
   code: ERPIN008001
   longestOverDue: false
-  minAmountForPartialPayOff: 500 //
+  minAmountForPartialPayOff: 500 #additional
   minInstallmentsForPartialPayOff: 0
   numberOfRetriesForAutoRepayment: 3
   partialPayOffAllowed: true
   repaymentMode: AUTO
   gracePeriodDays: 3
-  penalInterestRate: 2.0  //
+  penalInterestRate: 2.0  #additional
   retryIntervalDays: 
     - 1
     - 2
     - 3
-  writeOffThreshold: 50  //
-  excessPaymentCategory: ADVANCE_PAYMENT  //
+  writeOffThreshold: 50  #additional
+  excessPaymentCategory: ADVANCE_PAYMENT 
   repaymentSequence:
     - settlementPriority:
         - INTEREST

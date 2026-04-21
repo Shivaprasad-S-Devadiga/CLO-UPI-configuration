@@ -18,7 +18,7 @@ spec:
       loanConversionDetails:
         loanType: merchantEMI
         loanName: Merchant loan
-        loanProductID: ''
+        loanProductID: '1111'
         loanProductCode: null
         description: This is a standard merchant loan
       loanConversionRules:

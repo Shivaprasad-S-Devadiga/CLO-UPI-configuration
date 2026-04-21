@@ -12,7 +12,7 @@ spec:
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  validFrom: '2026-03-16T00:00:00.000+05:30'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T00:00:00.000+05:30'
   name: Amortization Policy
   description: Amortization Policy
@@ -22,11 +22,11 @@ spec:
   paymentType: ARREARS
   reAmortizationType: INSTALLMENT
   brokenPeriodApplicable: true
-  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION
+  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION #additional
   roundingRule: NEAR
   emiAmountRoundingRule: NEAR
   repaymentScheduleType: EPI
-  emiDateType: CUSTOMER_PREFERRED
+  emiDateType: CUSTOMER_PREFERRED #additional
   autoReAmortizationAllowed: true
   interestStartDay: TRANSACTION_DATE
   prepaymentAdjustment:

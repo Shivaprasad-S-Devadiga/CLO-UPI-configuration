@@ -65,7 +65,7 @@ spec:
           years: 0
         minTenure:
           days: 0
-          months: 1
+          months: 3
           years: 0
       vboId: ABCCL
   viewConfig:

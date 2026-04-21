@@ -23,7 +23,7 @@ spec:
       creditEffectiveDateForLoanConversion: loanConversionValueDate
       loanValueDate: LOAN_BOOKING_DATE
       loanName: Merchant EMI loan
-      loanProductID: ''
+      loanProductID: '1111'
       loanType: merchantEMI
       processingFeeReversalOnLoanCancellation: true
     - autoRefundProcessing: true
