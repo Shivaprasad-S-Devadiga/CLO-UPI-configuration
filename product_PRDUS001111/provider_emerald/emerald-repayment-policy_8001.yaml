@@ -18,12 +18,17 @@ spec:
   description: Emerald Repayment Policy
   code: ERPIN008001
   longestOverDue: false
-  minAmountForPartialPayOff: 5000
+  minAmountForPartialPayOff: 500
   minInstallmentsForPartialPayOff: 0
   numberOfRetriesForAutoRepayment: 3
   excessPaymentCategory: 'null'
   partialPayOffAllowed: true
   repaymentMode: AUTO
+  gracePeriodDays: 3
+  penalInterestRate: 2.0
+  retryIntervalDays: [1, 3, 5]
+  writeOffThreshold: 50
+  excessPaymentCategory: ADVANCE_PAYMENT
   repaymentSequence:
     - settlementPriority:
         - INTEREST

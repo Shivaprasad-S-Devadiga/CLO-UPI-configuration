@@ -17,16 +17,12 @@ spec:
   name: Emerald Closure Policy - Credit Line on UPI 
   description: Emerald Closure Policy for Credit Line on UPI product
   code: ECPIN009001
-  allowCancellation: true   # UNCHANGED: customers are allowed to cancel an EMI loan within the cooling
-  coolingPeriodForCancellation: 30 # CHANGED: cooling period reduced from 90 days to 30 days.
+  allowCancellation: true  
+  coolingPeriodForCancellation: 30
   allowPreClosure: true
-  preClosureLockIn: 0   # Affluent-friendly stance - customer can foreclose anytime.
-  # UNCHANGED: if >= 89.99% of principal has been repaid, the system auto
-  # pre-closes the residual loan (avoids tiny-balance tail). This is a
-  # finance/ops threshold, not region-specific. Confirm with India product
-  # owner whether affluent program wants same threshold.
-  autoPreClosureThresholdPercentage: 89.99
-  # UNCHANGED: on pre-closure, include any accrued-but-unbilled "catch-up"
-  # interest in the final settlement amount. Keeps issuer P&L whole.
-  includeCatchUpInterest: true/Users/pushpranjan/Desktop/tenant_configuration.aws-default-pp-mumbai.lsg/module_configurations/module_emerald/ang-policies
+  preClosureLockIn: 0  
+  autoPreClosureThresholdPercentage: 97.99
+  includeCatchUpInterest: false //additional
+
+  includeCatchUpInterest: false/Users/pushpranjan/Desktop/tenant_configuration.aws-default-pp-mumbai.lsg/module_configurations/module_emerald/ang-policies
   templateCode: in-credit

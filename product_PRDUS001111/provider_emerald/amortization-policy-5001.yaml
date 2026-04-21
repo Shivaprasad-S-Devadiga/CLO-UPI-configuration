@@ -5,7 +5,7 @@ metadata:
 spec:
   metadata:
     id: emerald.emeraldamortizationpolicy.5001
-    name: Credit line on UPI COA Emerald Amortization Policies
+    name: Credit line on UPI  Emerald Amortization Policies
     description: Credit line on UPI Emerald Amortization Policies
     requester:
       module: emerald-module-e2e
@@ -26,6 +26,11 @@ spec:
   roundingRule: NEAR
   emiAmountRoundingRule: NEAR
   repaymentScheduleType: EPI
+  emiDateType: CUSTOMER_PREFERRED
   autoReAmortizationAllowed: true
+  interestStartDay: TRANSACTION_DATE
+  prepaymentAdjustment:
+    adjustEmi: true
+    adjustTenure: false
   residualAmountValidationAllowed: false
   templateCode: in-credit

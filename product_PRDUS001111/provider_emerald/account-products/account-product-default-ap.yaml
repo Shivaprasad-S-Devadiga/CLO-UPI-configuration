@@ -49,19 +49,19 @@ spec:
       productPreferences:
         defaultTenure:
           days: 0
-          months: 12
+          months: 6
           years: 0
         issuanceStartDate: '2026-04-17'
         issuanceEndDate: '2999-12-31'
         maxLoanAmount:
-          amount: 5000000
+          amount: 500000
           currency: INR
         minLoanAmount:
-          amount: 10000
+          amount: 1000
           currency: INR
         maxTenure:
           days: 0
-          months: 24
+          months: 36
           years: 0
         minTenure:
           days: 0
