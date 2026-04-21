@@ -32,5 +32,4 @@ spec:
       parentCoaNodeCode: COAIN600309_Node_Revolving_Credit
   viewConfig:
     angelosSchema:
-      view: {
-        }
+      view: {}

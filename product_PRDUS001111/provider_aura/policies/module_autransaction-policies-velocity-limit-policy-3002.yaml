@@ -18,7 +18,7 @@ spec:
     tenantCode: lsg
   code: TPOIN00400408
   description: velocity limit policy for CLOU
-  coaCode: COAUS005001
+  coaCode: COAIN600309
   policyScope: EACH_ACCOUNT_OF_ACCOUNT_HOLDER
   effectiveFrom: '2018-04-01T00:00:00.000Z'
   expiresAt: '2999-12-31T00:00:00.000Z'
