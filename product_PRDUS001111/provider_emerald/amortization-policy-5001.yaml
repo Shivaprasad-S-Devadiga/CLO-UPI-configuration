@@ -32,5 +32,5 @@ spec:
   prepaymentAdjustment:
     adjustEmi: true
     adjustTenure: false
-  residualAmountValidationAllowed: false
+  residualAmountValidationAllowed: false //
   templateCode: in-credit
