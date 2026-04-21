@@ -1,0 +1,39 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: TransactionPolicy
+metadata:
+  name: lsg.aura.transaction-policy.decline-specific-mcc-codes-clou
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_aura/transactions-policies/transaction-policies-decline-specific-mcc-codes-clou.yaml","tenantCode":"lsg"}'
+spec:
+  accountsApplicableTo:
+    - account.provider: ruby
+  coaCode: COAUS005001
+  code: TPOIN00400406
+  customRules:
+    - action: META_DETAIL_CHANGE
+      errorCode: DISALLOWED_MERCHANT_CATEGORY
+      evaluationFunction:
+        function: function apply(policyContext) { var attributes = policyContext.posting.attributes; var mcc = attributes['super-card.mcc']; if (mcc === 'NULL') { return true; } return ['4829', '7800', '7801', '7802', '7995'].indexOf(mcc) == -1; }
+        type: JAVASCRIPT
+  description: Restricted Merchant Category Code for CLOU
+  effectiveFrom: '2026-01-01T00:00:00.000Z'
+  errorCodes:
+    - code: DECLINESPECIFICMCCCODES
+      description: Restricted Merchant Category Code for CLOU
+      errorCode: DISALLOWED_MERCHANT_CATEGORY
+  expiresAt: '2999-12-31T00:00:00.000Z'
+  metadata:
+    description: Restricted Merchant Category Code for CLOU
+    id: aura.transaction-policy.decline-specific-mcc-codes-clou
+    name: decline-specific-mcc-codes-clou
+    requester:
+      module: aura-module
+      moduleVersion: 0.0.1
+    tenantCode: lsg
+    tenantId: '600309'
+  policyScope: EACH_ACCOUNT_OF_ACCOUNT_HOLDER
+  violationAction: DECLINE_AND_NOTIFY
+  viewConfig:
+    displayName: transaction-policies-decline-specific-mcc-codes-clou

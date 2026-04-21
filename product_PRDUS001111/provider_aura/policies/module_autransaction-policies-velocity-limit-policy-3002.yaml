@@ -1,0 +1,36 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: TransactionPolicy
+metadata:
+  name: lsg.aura.configuration.transaction-policy-velocity-limit-policy.4008
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_aura/transactions-policies/transaction-policies-velocity-limit-policy-4008.yaml","tenantCode":"lsg"}'
+spec:
+  metadata:
+    id: aura.transaction-policy.velocity-limit-policy.4008
+    name: TransactionPolicy 4008
+    description: TransactionPolicy 4008
+    requester:
+      module: aura-module
+      moduleVersion: 0.0.1
+    tenantId: '600309'
+    tenantCode: lsg
+  code: TPOIN00400408
+  description: velocity limit policy for CLOU
+  coaCode: COAUS005001
+  policyScope: EACH_ACCOUNT_OF_ACCOUNT_HOLDER
+  effectiveFrom: '2018-04-01T00:00:00.000Z'
+  expiresAt: '2999-12-31T00:00:00.000Z'
+  violationAction: DECLINE_AND_NOTIFY
+  accountsApplicableTo:
+    - account.provider: ruby
+  attributes: {}
+  aggregateRules:
+    - action: DEBIT
+      transactionCategoryCode: ECOM_TXN_CODE_PS
+      aggExpressionCode: '6'
+      errorCode: DAILY_TXN_COUNT_LIMIT_VIOLATED
+      type: VELOCITY
+      cycleURI: CALENDAR_YEAR_DAILY_219912189340754819
+      maxLimit: 20
