@@ -22,13 +22,13 @@ spec:
   paymentType: ARREARS
   reAmortizationType: INSTALLMENT
   brokenPeriodApplicable: true
-  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION #additional
+  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION 
   roundingRule: NEAR
   emiAmountRoundingRule: NEAR
   repaymentScheduleType: EPI
   emiDateType: CUSTOMER_PREFERRED #additional
   autoReAmortizationAllowed: true
-  interestStartDay: TRANSACTION_DATE
+  interestStartDay: LOAN_CONVERSION_DATE
   prepaymentAdjustment:
     adjustEmi: true
     adjustTenure: false

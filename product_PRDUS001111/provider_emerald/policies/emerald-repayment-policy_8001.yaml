@@ -30,7 +30,6 @@ spec:
     - 2
     - 3
   writeOffThreshold: 50  #additional
-  excessPaymentCategory: ADVANCE_PAYMENT 
   repaymentSequence:
     - settlementPriority:
         - INTEREST

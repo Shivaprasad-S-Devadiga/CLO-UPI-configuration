@@ -1,5 +1,5 @@
 apiVersion: rrsd.zetaapps.in/v1alpha1
-kind: EmeraldClosurePolicy
+kind: EmeraldClosurePolicy 
 metadata:
   name: lsg.emerald.emeraldclosurepolicy.9001
 spec:
@@ -23,6 +23,4 @@ spec:
   preClosureLockIn: 0  
   autoPreClosureThresholdPercentage: 97.99 #additional
   includeCatchUpInterest: false #additional
-
-  includeCatchUpInterest: false/Users/pushpranjan/Desktop/tenant_configuration.aws-default-pp-mumbai.lsg/module_configurations/module_emerald/ang-policies
   templateCode: in-credit
