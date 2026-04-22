@@ -18,7 +18,11 @@ spec:
   validTill: '2099-01-01T00:00:00.000+01:00'
   name: Statement Policy
   description: Statement Policy
+<<<<<<< HEAD
   code: STMIN008005
+=======
+  code: STMIN001111
+>>>>>>> df1c8a4e2014e310b82d00bf319ee3a81d476129
   physicalStatementThreshold: '999999999'
   graceDays: 0
   payByHolidayTreatment: retainHoliday

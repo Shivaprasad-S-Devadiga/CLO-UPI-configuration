@@ -9,7 +9,7 @@ metadata:
 spec:
   accountsApplicableTo:
     - account.provider: ruby
-  coaCode: COAUS005001
+  coaCode: COAIN600309
   code: TPOIN00400406
   customRules:
     - action: META_DETAIL_CHANGE

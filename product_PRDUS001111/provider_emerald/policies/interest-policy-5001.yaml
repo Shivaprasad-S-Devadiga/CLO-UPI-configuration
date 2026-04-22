@@ -24,7 +24,6 @@ spec:
     accountLevelRate: true
     dayCountMethods:
       - lifeCycleEvent: firstInstallment
-        
         dayCountMethod: ACTUAL/365
       - lifeCycleEvent: preClosure
         dayCountMethod: ACTUAL/365

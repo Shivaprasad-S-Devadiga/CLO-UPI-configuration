@@ -21,7 +21,6 @@ spec:
     schemaUrl: http://localhost
     schemaInlineContent: |
       {"properties":{"attributes":{"type":"object"},"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"amortizationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"defaultTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxLoanAmount":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"maxTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"},"minLoanAmount":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minTenure":{"properties":{"days":{"type":"number"},"months":{"type":"number"},"years":{"type":"number"}},"type":"object"}},"type":"object"},"vboId":{"type":"string"}},"type":"object"}
-    key: key
     isEncrypted: false
     useVault: false
     value:
@@ -46,6 +45,16 @@ spec:
         repaymentPolicy:
           code: ERPIN008001
           version: 1
+        loanConversionPolicy:
+          code: EIPIN009001
+          version: 1
+          
+      programs:
+        - code: ELCPROGIN005001
+          type: General
+          validFrom: 2026-04-19T00:00:00.000+05:30
+          validTill: 9999-01-01T00:00:00.000+05:30
+
       productPreferences:
         defaultTenure:
           days: 0

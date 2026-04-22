@@ -52,7 +52,6 @@ spec:
       - W1
       - X1
   daysPastDueForAutoPreClosure: 145
-  installmentBillingDays: 1
   installmentDateRule:
     addOnDays: 1
     mode: BILLING_DATE
