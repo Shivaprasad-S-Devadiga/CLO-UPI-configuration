@@ -198,7 +198,7 @@ spec:
                   property: transactionAmount
                   allowedValues: []
                   deniedValues: []
-                  maxVal: 500000
+                  maxVal: 5000000
                   minVal: 500000
                 - ruleType: DECLARATIVE
                   property: merchantCategoryCode
