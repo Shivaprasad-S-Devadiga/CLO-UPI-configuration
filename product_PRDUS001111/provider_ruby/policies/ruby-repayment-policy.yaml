@@ -27,17 +27,17 @@ spec:
           repaymentSequenceTieBreaker: FIFO
           settlementPriority:
             - LateFeeBilled
-            - InsufficientFundFeeBilled
             - CollectionFeeBilled
             - RetailMiscFeeBilled
             - RetailServiceFeeBilled
+            - AnnualFeeBilled
             - RetailInterestBilled
             - RetailPrincipalBilled
             - LateFeeUnbilled
-            - InsufficientFundFeeUnbilled
             - CollectionFeeUnbilled
             - RetailMiscFeeUnbilled
             - RetailServiceFeeUnbilled
+            - AnnualFeeUnbilledx
             - RetailInterestUnbilled
             - RetailPrincipalUnbilled
         - chargeOffStatuses:
@@ -46,15 +46,15 @@ spec:
           settlementPriority:
             - RetailPrincipalBilled
             - LateFeeBilled
-            - InsufficientFundFeeBilled
             - RetailMiscFeeBilled
             - RetailServiceFeeBilled
+            - AnnualFeeBilled
             - RetailInterestBilled
             - RetailPrincipalUnbilled
             - LateFeeUnbilled
-            - InsufficientFundFeeUnbilled
             - RetailMiscFeeUnbilled
             - RetailServiceFeeUnbilled
+            - AnnualFeeUnbilled
             - RetailInterestUnbilled
     belowMAD:
       allocationModel: LOWESTTOHIGHESTAPR
@@ -66,12 +66,13 @@ spec:
           settlementPriority:
             - RetailMiscFeeBilled
             - RetailServiceFeeBilled
+            - AnnualFeeBilled
             - RetailInterestBilled
             - RetailPrincipalBilled
             - LateFeeUnbilled
-            - InsufficientFundFeeUnbilled
             - RetailMiscFeeUnbilled
             - RetailServiceFeeUnbilled
+            - AnnualFeeUnbilled
             - RetailInterestUnbilled
             - RetailPrincipalUnbilled
         - chargeOffStatuses:
@@ -80,16 +81,16 @@ spec:
           settlementPriority:
             - RetailPrincipalBilled
             - LateFeeBilled
-            - InsufficientFundFeeBilled
             - RetailMiscFeeBilled
             - RetailServiceFeeBilled
+            - AnnualFeeBilled
             - RetailInterestBilled
             - RetailPrincipalUnbilled
             - LateFeeUnbilled
-            - InsufficientFundFeeUnbilled
             - CollectionFeeUnbilled
             - RetailMiscFeeUnbilled
             - RetailServiceFeeUnbilled
+            - AnnualFeeUnbilled
             - RetailInterestUnbilled
   otherCreditAllocation:
     allocationModel: HIGHESTTOLOWESTAPR
@@ -109,6 +110,7 @@ spec:
           - CollectionFeeUnbilled
           - RetailMiscFeeUnbilled
           - RetailServiceFeeUnbilled
+          - AnnualFeeUnbilled
           - RetailInterestUnbilled
           - RetailPrincipalUnbilled
       - chargeOffStatuses:
@@ -126,6 +128,7 @@ spec:
           - CollectionFeeUnbilled
           - RetailMiscFeeUnbilled
           - RetailServiceFeeUnbilled
+          - AnnualFeeUnbilled
           - RetailInterestUnbilled
   repaymentReversal:
     excessAttributionPostingCategory: RetailPrincipalUnbilled

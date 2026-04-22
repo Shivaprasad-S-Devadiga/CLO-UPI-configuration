@@ -18,13 +18,13 @@ spec:
     tenantId: '600309'
     tenantCode: lsg
   assessmentParameters:
-    computationType: DAILYBALANCEWITHMONTHLYCOMPOUNDING
+    computationType: AVGDAILYBALANCEWITHOUTCOMPOUNDING
   code: INTIN0001
   description: upi-interest-policy Ruby UPI Interest Policy
   liquidationParameters:
     dayCountMethod: ACTUAL/ACTUAL
     debitEffectiveFrom: ValueTime
-    gracePeriodApplicableOnInterest: false
+    gracePeriodApplicableOnInterest: true
     interestThreshold: 0
     liquidationModels:
     - balanceType: retail
@@ -33,7 +33,7 @@ spec:
         code: IRTUPI00001
         version: '1'
       unBilled: DeferCurrentIfOpenBalPaidElseBillCurrent
-    minInterest: 100
+    minInterest: 0
     payOffVariance: 0
     paymentPostingCategory: rePayments
     roundingRule: NEAR

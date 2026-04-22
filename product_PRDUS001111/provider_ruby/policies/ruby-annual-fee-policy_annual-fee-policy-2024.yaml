@@ -1,0 +1,23 @@
+kind: RubyAnnualFeePolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.annualfeepolicy.clou-upi-annual-fee
+  namespace: ruby
+spec:
+  metadata:
+    id: ruby.annualfeepolicy.clou-upi-annual-fee
+    name: clou-upi-annual-fee
+    description: CLOU UPI Annual Fee Policy
+    tenantId: '600309'
+    tenantCode: lsg
+  name: CLOU UPI Annual Fee Policy
+  code: ANFIN0001
+  description: Annual fee for CLOU UPI credit line
+  modelParameters:
+    fixedAmount:
+      baseFee:
+        amount: 299 
+        currency: INR
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T23:59:59.999+05:30'
+  templateCode: in-credit
