@@ -25,7 +25,7 @@ spec:
   repaymentMode: AUTO
   gracePeriodDays: 3
   penalInterestRate: 2.0  #additional
-  retryIntervalDays: 
+  retryIntervalDays: #additional
     - 1
     - 2
     - 3

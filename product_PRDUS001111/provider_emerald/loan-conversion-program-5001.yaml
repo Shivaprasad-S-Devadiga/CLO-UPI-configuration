@@ -155,7 +155,7 @@ spec:
                     - '9402'
                     - '9405'
           epiParam:
-            interest: 18
+            interest: 20
             loanTenure: null
             coolingPeriodDurationUnit: MINUTES
             coolingPeriod: 0
@@ -303,7 +303,7 @@ spec:
                     - '9402'
                     - '9405'
           epiParam:
-            interest: 20
+            interest: 15
             loanTenure: null
             coolingPeriodDurationUnit: MINUTES
             coolingPeriod: 15
