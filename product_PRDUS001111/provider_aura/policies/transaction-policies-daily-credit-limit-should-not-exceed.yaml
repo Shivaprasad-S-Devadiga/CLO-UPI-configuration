@@ -1,0 +1,38 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: TransactionPolicy
+metadata:
+  name: lsg.aura.transaction-policy.daily-credit-limit-should-not-exceed-clou
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_aura/spend-limit-policies/transaction-policies-daily-credit-limit-should-not-exceed-clou.yaml","tenantCode":"lsg"}'
+spec:
+  accountsApplicableTo:
+    - account.provider: ruby
+  coaCode: COAIN600309
+  code: TPOIN00400402
+  customRules:
+    - action: META_DETAIL_CHANGE
+      errorCode: DAILY_LIMIT_EXCEEDED
+      evaluationFunction:
+        function: 'function apply(policyContext) { var creditLimit = policyContext[''customFields''][''CREDIT_LIMIT''] == undefined ? 0 : policyContext[''customFields''][''CREDIT_LIMIT'']; var currentSpend = policyContext[''afterPostingLTDCategoriesBalances''][''Spends''] == undefined ? 0 : policyContext[''afterPostingLTDCategoriesBalances''][''Spends''][''currentBalance'']; return creditLimit >= currentSpend; }'
+  description: Daily credit balance on CLOU account should not exceed configured credit limit
+  effectiveFrom: '2026-01-01T00:00:00.000Z'
+  errorCodes:
+    - code: DAILYCREDITLIMITSHOULDNOTEXCEED
+      description: Daily credit balance on CLOU account should not exceed configured credit limit
+      errorCode: DAILY_LIMIT_EXCEEDED
+  expiresAt: '2999-12-31T00:00:00.000Z'
+  metadata:
+    description: Daily credit balance on CLOU account should not exceed configured credit limit
+    id: aura.transaction-policy.daily-credit-limit-should-not-exceed-clou
+    name: daily-credit-limit-should-not-exceed-clou
+    requester:
+      module: aura-module
+      moduleVersion: 0.0.1
+    tenantCode: lsg
+    tenantId: '600309'
+  policyScope: EACH_ACCOUNT_OF_ACCOUNT_HOLDER
+  violationAction: DECLINE_AND_NOTIFY
+  viewConfig:
+    displayName: transaction-policies-daily-credit-limit-should-not-exceed-clou.yaml
