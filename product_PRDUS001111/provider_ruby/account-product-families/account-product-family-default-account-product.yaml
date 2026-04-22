@@ -1,16 +1,16 @@
 kind: Configuration
 apiVersion: rrsd.zetaapps.in/v1alpha1
 metadata:
-  name: lsg.ruby.configuration.product.9978.clou-upi-account-product.account-product
+  name: lsg.ruby.configuration.product.1111.clou-upi-account-product.account-product
   labels:
     rrsd.zetaapps.in/day: day-one
   annotations:
-    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS009978/provider_ruby/account-product-familes/account-product-family-clou-upi-account-product.yaml","tenantCode":"lsg"}'
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-clou-upi-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-clou-upi-pp-mumbai.lsg.git","filePath":"/.clou-upis/product_configurations/provider_ruby/tree/root/t0/product_configurations/product_PRDUS001111/provider_ruby/account-product-familes/account-product-family-clou-upi-account-product.yaml","tenantCode":"lsg"}'
 spec:
   metadata:
-    id: ruby.configuration.product.9978.clou-upi-account-product.account-product
+    id: ruby.configuration.product.1111.clou-upi-account-product.account-product
     name: clou-upi-account-product
-    description: family-clou-upi-account-product Account Product for 9978
+    description: family-clou-upi-account-product Account Product for 1111
     requester:
       module: ruby
       moduleVersion: 0.0.1
@@ -25,7 +25,7 @@ spec:
     isEncrypted: false
     useVault: false
     value:
-      accountProductFamilyCode: APFIN009978
+      accountProductFamilyCode: APFIN001111
       # channelCodes:
       #   - CHN<CC>ZZ11<XX>
       coaCode: COAIN600309
@@ -68,11 +68,7 @@ spec:
           code: SPLIN001007
           version: 0.0.1
         statementPolicy:
-<<<<<<< HEAD
-          code: STMIN008005
-=======
           code: STMIN001111
->>>>>>> df1c8a4e2014e310b82d00bf319ee3a81d476129
           version: 0.0.1
       productPreferences:
         issuanceEndDate: 2026-04-17T00:00:00.000+05:30
