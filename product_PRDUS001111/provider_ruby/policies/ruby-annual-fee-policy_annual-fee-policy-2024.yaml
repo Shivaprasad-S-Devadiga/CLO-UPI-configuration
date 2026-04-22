@@ -18,6 +18,13 @@ spec:
       baseFee:
         amount: 299 
         currency: INR
+  chargeStrategy: DIRECT-APPLY
+  chargeStrategyConfig:
+    application:
+      applicabilityOnwards: keyDateSpecification://code/FIRST_ANNIVERSARY_OF_ACCOUNT_OPEN_DATE
+      applyOn: keyDateSpecification://code/BILLING_DATE
+      offsetDaysForValueDate: '0'
+  remarks: Annual Fee
   validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T23:59:59.999+05:30'
   templateCode: in-credit

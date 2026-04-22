@@ -65,12 +65,12 @@ spec:
           code: SPLIN001007
           version: 0.0.1
         statementPolicy:
-          code: STMUS008005
+          code: STMIN008005
           version: 0.0.1
       productPreferences:
         # cashLimitPercent: 40
-        issuanceEndDate: YYYY-MM-DD
-        issuanceStartDate: YYYY-MM-DD
+        issuanceEndDate: 2026-01-01
+        issuanceStartDate: 2999-12-31
         maxCreditLimit:
           amount: 500000
           currency: INR

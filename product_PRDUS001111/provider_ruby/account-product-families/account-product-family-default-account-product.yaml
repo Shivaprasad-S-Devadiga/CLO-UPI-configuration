@@ -20,7 +20,7 @@ spec:
     format: YAML
     schemaUrl: http://localhost
     schemaInlineContent: |
-      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"delinquencyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"dormancyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"feePolicies":{"properties":{"annualFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardAdvanceForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"cardReplacementFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"purchaseForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"madPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"statementPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"cashLimitPercent":{"type":"number"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"overLimitPercent":{"type":"number"}},"type":"object"},"programs":{"items":{"properties":{"code":{"type":"string"},"type":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"}
+      {"properties":{"code":{"type":"string"},"description":{"type":"string"},"name":{"type":"string"},"policies":{"properties":{"accountClosurePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"accountNumberGenerationPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"delinquencyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"dormancyPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"feePolicies":{"properties":{"annualFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"type":"object"},"version":{"type":"number"}},"type":"object"},"purchaseForeignTransactionFeePolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"interestPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"madPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"repaymentPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"},"statementPolicy":{"properties":{"code":{"type":"string"},"version":{"type":"number"}},"type":"object"}},"type":"object"},"productPreferences":{"properties":{"cashLimitPercent":{"type":"number"},"issuanceEndDate":{"type":"string"},"issuanceStartDate":{"type":"string"},"maxCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"minCreditLimit":{"properties":{"amount":{"type":"number"},"currency":{"type":"string"}},"type":"object"},"overLimitPercent":{"type":"number"}},"type":"object"},"programs":{"items":{"properties":{"code":{"type":"string"},"type":{"type":"string"},"validFrom":{"type":"string"},"validTill":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"}
     key: key
     isEncrypted: false
     useVault: false
@@ -29,7 +29,7 @@ spec:
       # channelCodes:
       #   - CHN<CC>ZZ11<XX>
       coaCode: COAIN600309
-      code: RAPIN009978
+      code: RAPIN001111
       description: family-clou-upi-account-product Ruby Account Product
       name: family-clou-upi-account-product Ruby Account Product
       policies:
@@ -68,7 +68,7 @@ spec:
           code: SPLIN001007
           version: 0.0.1
         statementPolicy:
-          code: STM<CC>00<XXXX>
+          code: STMIN008005
           version: 0.0.1
       productPreferences:
         issuanceEndDate: 2026-04-17T00:00:00.000+05:30

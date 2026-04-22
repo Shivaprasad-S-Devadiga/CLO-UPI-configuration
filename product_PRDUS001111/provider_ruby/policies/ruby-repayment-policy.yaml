@@ -64,6 +64,7 @@ spec:
             - '*'
           repaymentSequenceTieBreaker: FIFO
           settlementPriority:
+            - LateFeeBilled
             - RetailMiscFeeBilled
             - RetailServiceFeeBilled
             - AnnualFeeBilled
@@ -134,6 +135,6 @@ spec:
     excessAttributionPostingCategory: RetailPrincipalUnbilled
     lateFeeAdjustment: true
     interestAdjustment: true
-  validFrom: '2000-01-01T00:00:00.000-07:00'
-  validTill: '2099-01-01T00:00:00.000-07:00'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T23:59:59.999+05:30'
   templateCode: in-credit

@@ -18,14 +18,14 @@ spec:
   code: LPFIN00001
   description: Ruby Late Fee Policy
   modelParameters:
-    amountType: FIXED
+    amountType: PERCENTAGE
     restrictOnOtherFees: []
     repeatedOccurrence:
       maxAmount: 4000
-      baseAmount: 400
+      basePercentage: 9
     firstOccurenceAmount:
       maxAmount: 2000
-      baseAmount: 200
+      basePercentage: 5
     repeatOccurrenceWindow:
       type: CYCLES
       count: '6'
@@ -54,7 +54,7 @@ spec:
         unit: MONTHS
         value: 6
       durationType: RELATIVE
-  validFrom: '2026-01-01T00:00:00.000-07:00'
-  validTill: '2999-12-31T00:00:00.000-07:00'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T00:00:00.000+05:30'
   templateCode: in-credit
 

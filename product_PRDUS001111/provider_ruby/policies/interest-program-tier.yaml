@@ -23,11 +23,6 @@ spec:
       description: CLOU UPI Tier + MCC Interest Program
 
       interestRules:
-
-      #################################################################
-      # 🔵 PLATINUM TIER
-      #################################################################
-
       - applicableTo:
           minValueThreshold: 0
           maxValueThreshold: 999999999999
@@ -89,12 +84,6 @@ spec:
             version: 1
         precedenceCode: 30
         ruleId: PLATINUM_DEFAULT
-
-
-      #################################################################
-      # 🟡 GOLD TIER
-      #################################################################
-
       - applicableTo:
           minValueThreshold: 0
           maxValueThreshold: 999999999999
@@ -156,12 +145,7 @@ spec:
             version: 1
         precedenceCode: 60
         ruleId: GOLD_DEFAULT
-
-
-      #################################################################
-      # ⚪ SILVER TIER
-      #################################################################
-
+      #  SILVER TIER
       - applicableTo:
           minValueThreshold: 0
           maxValueThreshold: 999999999999

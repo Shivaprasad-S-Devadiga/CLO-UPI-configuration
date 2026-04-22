@@ -19,7 +19,7 @@ spec:
     tenantCode: lsg
   code: MADIN00001
   description: upi-minimum-amount-due-policy Ruby Minimum Amount Due Policy
-  minimumMadAmount: 3500
+  minimumMadAmount: 0
   name: upi-minimum-amount-due-policy Ruby Minimum Amount Due Policy
   overwriteupiBehaviour: false
   postingCategoriesComponent:
@@ -27,27 +27,31 @@ spec:
     postingCategory: RetailPrincipalBilled
   - percentage: 5
     postingCategory: RetailPrincipalUnbilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailServiceFeeBilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailServiceFeeUnbilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: CollectionFeeBilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: CollectionFeeUnbilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailMiscFeeBilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailMiscFeeUnbilled
+  - percentage: 1
+    postingCategory: AnnualFeeBilled
+  - percentage: 1
+    postingCategory: AnnualFeeUnbilled
   - percentage: 0
     postingCategory: gstBilled
   - percentage: 0
     postingCategory: gstUnbilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailInterestBilled
-  - percentage: 5
+  - percentage: 100
     postingCategory: RetailInterestUnbilled
-  - percentage: 0
+  - percentage: 100
     postingCategory: LateFeeBilled
   - percentage: 100
     postingCategory: LateFeeUnbilled
@@ -60,5 +64,5 @@ spec:
   - percentage: 0
     postingCategory: EMIPrincipalBilled
   templateCode: in-credit
-  validFrom: '2000-01-01T00:00:00.000-07:00'
-  validTill: '2999-01-01T00:00:00.000-07:00'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T23:59:59.999+05:30'

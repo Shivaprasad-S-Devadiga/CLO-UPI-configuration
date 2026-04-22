@@ -25,7 +25,7 @@ spec:
             keyDateURI: keyDateSpecification://code/REGULAR_DATE
       automaticRefundEnabled: true
       balanceThreshold: 2000
-      ageThreshold: 3
+      ageThreshold: 0
       refundType: FULL
   validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T23:59:59.999+05:30'

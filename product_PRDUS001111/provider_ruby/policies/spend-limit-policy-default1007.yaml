@@ -24,4 +24,7 @@ spec:
     - category: DOMESTIC_ECOM
       limitType: PERTRANSACTION
       limitValue: '10000'
+    - category: RETAIL_PURCHASE_TRANSACTIONS
+      limitType: PERTRANSACTION
+      limitValue: '5000'
   templateCode: in-credit

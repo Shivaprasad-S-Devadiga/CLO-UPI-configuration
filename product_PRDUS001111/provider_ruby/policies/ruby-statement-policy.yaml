@@ -18,7 +18,7 @@ spec:
   validTill: '2099-01-01T00:00:00.000+01:00'
   name: Statement Policy
   description: Statement Policy
-  code: STMUS008005
+  code: STMIN008005
   physicalStatementThreshold: '999999999'
   graceDays: 0
   payByHolidayTreatment: retainHoliday
@@ -57,7 +57,7 @@ spec:
   statementTemplateCode: https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.15.0/abc/template.html
   applyLateFeesOn: GRACE_DATE
   valueDateOfLateFees: DUE_DATE
-  ytdSummaryEnabled: true
+  ytdSummaryEnabled: false
   ytdSummaryStartDate: 1
   ytdSummaryStartMonth: 1
   isProbableLateFeeEnabled: true
