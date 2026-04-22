@@ -68,7 +68,7 @@ spec:
           code: SPLIN001007
           version: 0.0.1
         statementPolicy:
-          code: STM<CC>00<XXXX>
+          code: STMIN001111
           version: 0.0.1
       productPreferences:
         issuanceEndDate: 2026-04-17T00:00:00.000+05:30
