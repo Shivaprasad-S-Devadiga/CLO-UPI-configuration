@@ -1,0 +1,333 @@
+apiVersion: rrsd.zetaapps.in/v1alpha1
+kind: Configuration
+metadata:
+  name: lsg.emerald.configuration.program.general5001.loan-conversion-program
+spec:
+  config:
+    format: YAML
+    isEncrypted: false
+    key: key
+    schemaInlineContent: '{  "$schema": "http://json-schema.org/draft-04/schema#",  "type": "object",  "properties": {    "name": {      "type": "string"    },    "lienMarkedDebitPosting": {      "type": "boolean"    },    "directed": {      "type": "boolean"    },    "voucherCodes": {      "type": "array",      "items": [        {          "type": "string"        },        {          "type": "string"        },        {          "type": "string"        },        {          "type": "string"        },        {          "type": "string"        }      ]    },    "description": {      "type": "string"    },    "precedenceCode": {      "type": "string"    },    "code": {      "type": "string"    },    "accountStatus": {      "type": "array",      "items": [        {          "type": "object",          "properties": {            "name": {              "type": "string"            },            "status": {              "type": "string"            },            "finalChargeOffDate": {              "type": "string"            },            "type": {              "type": "string"            },            "reasonCode": {              "type": "string"            },            "tagTypeCode": {              "type": "string"            }          },          "required": [            "name",            "status",            "finalChargeOffDate",            "type",            "reasonCode",            "tagTypeCode"          ]        },        {          "type": "object",          "properties": {            "name": {              "type": "string"            },            "status": {              "type": "string"            },            "finalChargeOffDate": {              "type": "string"            },            "type": {              "type": "string"            },            "reasonCode": {              "type": "string"            },            "tagTypeCode": {              "type": "string"            }          },          "required": [            "name",            "status",            "finalChargeOffDate",            "type",            "reasonCode",            "tagTypeCode"          ]        }      ]    },    "validUntil": {      "type": "string"    },    "validFrom": {      "type": "string"    },    "status": {      "type": "string"    },    "billed": {      "type": "boolean"    },    "isBookDateGreaterThanLastStatementDatePlusXDays": {      "type": "boolean"    },    "daysAfterLastStatementDate": {      "type": "integer"    }  },  "required": [    "name",    "lienMarkedDebitPosting",    "directed",    "voucherCodes",    "description",    "precedenceCode",    "code",    "accountStatus",    "validUntil",    "validFrom",    "status"  ]}'
+    schemaUrl: http://localhost
+    useVault: false
+    value:
+      programCode: ELCPROGIN005001
+      precedenceCode: '100'
+      validFrom: '2026-01-01T00:00:00.000+05:30'
+      validUntil: '2099-12-31T00:00:00.000+05:30'
+      loanConversionDetails:
+        loanType: merchantEMI
+        loanName: Merchant loan
+        loanProductID: '1111'
+        loanProductCode: null
+        description: This is a standard merchant loan
+      loanConversionRules:
+        - ruleId: RULE01
+          precedenceCode: 100
+          applicabilityCriteria:
+            accountEligibilityRules:
+              scriptRule:
+                ruleType: JAVASCRIPT
+                value: function ELCPROGIN005001_RULE01(ruleContext) {return true;}
+              declarativeRules:
+                - ruleType: DECLARATIVE
+                  property: statementBalancePayoffStatus
+                  allowedValues:
+                    - transactor
+                  deniedValues: []
+            transactionEligibilityRules:
+              scriptRule:
+                ruleType: JAVASCRIPT
+                value: function ELCPROGUS005001_RULE01(ruleContext) {return true;}
+              declarativeRules:
+                - ruleType: DECLARATIVE
+                  property: numberOfDaysForTransactionConversion
+                  allowedValues: []
+                  deniedValues: []
+                  maxVal: 15
+                  minVal: 0
+                - ruleType: DECLARATIVE
+                  property: transactionAmount
+                  allowedValues: []
+                  deniedValues: []
+                  maxVal: 50000
+                  minVal: 1000
+                - ruleType: DECLARATIVE
+                  property: merchantCategoryCode
+                  allowedValues: []
+                  deniedValues:
+                    - '1409'
+                    - '1409'
+                    - '2741'
+                    - '2791'
+                    - '4214'
+                    - '4215'
+                    - '4225'
+                    - '4468'
+                    - '4789'
+                    - '4814'
+                    - '4821'
+                    - '4829'
+                    - '4900'
+                    - '5047'
+                    - '5094'
+                    - '5122'
+                    - '5172'
+                    - '5300'
+                    - '5309'
+                    - '5411'
+                    - '5422'
+                    - '5441'
+                    - '5451'
+                    - '5462'
+                    - '5499'
+                    - '5521'
+                    - '5541'
+                    - '5542'
+                    - '5592'
+                    - '5811'
+                    - '5812'
+                    - '5813'
+                    - '5814'
+                    - '5912'
+                    - '5921'
+                    - '5933'
+                    - '5944'
+                    - '5960'
+                    - '5962'
+                    - '5963'
+                    - '5966'
+                    - '5967'
+                    - '5968'
+                    - '5969'
+                    - '5983'
+                    - '5993'
+                    - '6010'
+                    - '6011'
+                    - '6012'
+                    - '6050'
+                    - '6051'
+                    - '6211'
+                    - '6300'
+                    - '6381'
+                    - '6513'
+                    - '6529'
+                    - '6531'
+                    - '6533'
+                    - '6538'
+                    - '6540'
+                    - '7273'
+                    - '7276'
+                    - '7311'
+                    - '7322'
+                    - '7339'
+                    - '7349'
+                    - '7361'
+                    - '7372'
+                    - '7375'
+                    - '7392'
+                    - '7393'
+                    - '7399'
+                    - '7512'
+                    - '7513'
+                    - '7519'
+                    - '7631'
+                    - '7800'
+                    - '7801'
+                    - '7802'
+                    - '7994'
+                    - '7995'
+                    - '7997'
+                    - '8351'
+                    - '8398'
+                    - '8641'
+                    - '8651'
+                    - '8661'
+                    - '8675'
+                    - '8699'
+                    - '8911'
+                    - '8931'
+                    - '8999'
+                    - '9222'
+                    - '9223'
+                    - '9311'
+                    - '9399'
+                    - '9402'
+                    - '9405'
+          epiParam:
+            interest: 20
+            loanTenure: null
+            coolingPeriodDurationUnit: MINUTES
+            coolingPeriod: 0
+            loanRepaymentType: INSTALLMENTS
+            noOfInstallments:
+              - 3
+              - 6
+              - 9
+              - 12
+            firstInstallmentDateParams:
+              referenceDate: BILLING_DATE
+              firstInstallmentTenureType: ATMOST_LOAN_TERM
+              addOnDays: 1
+            installmentFrequency: MONTHLY
+        - ruleId: RULE02
+          precedenceCode: 100
+          applicabilityCriteria:
+            accountEligibilityRules:
+              scriptRule:
+                ruleType: JAVASCRIPT
+                value: function ELCPROGUS005001_RULE01(ruleContext) {return true;}
+              declarativeRules:
+                - ruleType: DECLARATIVE
+                  property: statementBalancePayoffStatus
+                  allowedValues:
+                    - transactor
+                  deniedValues: []
+            transactionEligibilityRules:
+              scriptRule:
+                ruleType: JAVASCRIPT
+                value: function ELCPROGUS005001_RULE01(ruleContext) {return true;}
+              declarativeRules:
+                - ruleType: DECLARATIVE
+                  property: numberOfDaysForTransactionConversion
+                  allowedValues: []
+                  deniedValues: []
+                  maxVal: 7
+                  minVal: 0
+                - ruleType: DECLARATIVE
+                  property: transactionAmount
+                  allowedValues: []
+                  deniedValues: []
+                  maxVal: 500000
+                  minVal: 500000
+                - ruleType: DECLARATIVE
+                  property: merchantCategoryCode
+                  allowedValues: []
+                  deniedValues:
+                    - '1409'
+                    - '1409'
+                    - '2741'
+                    - '2791'
+                    - '4214'
+                    - '4215'
+                    - '4225'
+                    - '4468'
+                    - '4789'
+                    - '4814'
+                    - '4821'
+                    - '4829'
+                    - '4900'
+                    - '5047'
+                    - '5094'
+                    - '5122'
+                    - '5172'
+                    - '5300'
+                    - '5309'
+                    - '5411'
+                    - '5422'
+                    - '5441'
+                    - '5451'
+                    - '5462'
+                    - '5499'
+                    - '5521'
+                    - '5541'
+                    - '5542'
+                    - '5592'
+                    - '5811'
+                    - '5812'
+                    - '5813'
+                    - '5814'
+                    - '5912'
+                    - '5921'
+                    - '5933'
+                    - '5944'
+                    - '5960'
+                    - '5962'
+                    - '5963'
+                    - '5966'
+                    - '5967'
+                    - '5968'
+                    - '5969'
+                    - '5983'
+                    - '5993'
+                    - '6010'
+                    - '6011'
+                    - '6012'
+                    - '6050'
+                    - '6051'
+                    - '6211'
+                    - '6300'
+                    - '6381'
+                    - '6513'
+                    - '6529'
+                    - '6531'
+                    - '6533'
+                    - '6538'
+                    - '6540'
+                    - '7273'
+                    - '7276'
+                    - '7311'
+                    - '7322'
+                    - '7339'
+                    - '7349'
+                    - '7361'
+                    - '7372'
+                    - '7375'
+                    - '7392'
+                    - '7393'
+                    - '7399'
+                    - '7512'
+                    - '7513'
+                    - '7519'
+                    - '7631'
+                    - '7800'
+                    - '7801'
+                    - '7802'
+                    - '7994'
+                    - '7995'
+                    - '7997'
+                    - '8351'
+                    - '8398'
+                    - '8641'
+                    - '8651'
+                    - '8661'
+                    - '8675'
+                    - '8699'
+                    - '8911'
+                    - '8931'
+                    - '8999'
+                    - '9222'
+                    - '9223'
+                    - '9311'
+                    - '9399'
+                    - '9402'
+                    - '9405'
+          epiParam:
+            interest: 15
+            loanTenure: null
+            coolingPeriodDurationUnit: MINUTES
+            coolingPeriod: 15
+            loanRepaymentType: INSTALLMENTS
+            nnoOfInstallments:
+               - 3
+               - 6
+               - 9
+               - 12
+               - 24
+               - 36
+            firstInstallmentDateParams:
+              referenceDate: BILLING_DATE
+              firstInstallmentTenureType: EXACT_LOAN_TERM
+              addOnDays: 0
+            installmentFrequency: MONTHLY
+  metadata:
+    description: Loan conversion program
+    id: emerald.configuration.program.general5001.loan-conversion-program
+    name: Loan Conversion Program
+    tenantCode: lsg
+    tenantId: '600309'
+  viewConfig:
+    angelosSchema:
+      view:
+        entityId: angelos.emerald.loan-conversion-program
+    displayName: Loan Conversion Program

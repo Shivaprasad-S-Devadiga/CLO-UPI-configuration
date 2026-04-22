@@ -1,0 +1,73 @@
+kind: RubyStatementPolicy
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.rubystatementpolicy.module.8005
+  labels:
+    rrsd.zetaapps.in/day: day-zero
+  annotations:
+    zeta.tech/resource-tags: '{"gitDbRepo":"tenant_configuration.aws-default-pp-mumbai.lsg","gitDbPath":"https://gitea.internal.mum1-pp.zetaapps.in/zetaengg/tenant_configuration.aws-default-pp-mumbai.lsg.git","filePath":"module_configurations/module_ruby/statement-policies/ruby-statement-policy_8005.yaml","tenantCode":"lsg"}'
+  namespace: ruby
+spec:
+  metadata:
+    id: ruby.rubystatementpolicy.module.8005
+    name: ruby.rubystatementpolicy.module.8005
+    description: ruby.rubystatementpolicy.module.8005
+    tenantId: '600309'
+    tenantCode: lsg
+  validFrom: '2000-01-01T00:00:00.000+01:00'
+  validTill: '2099-01-01T00:00:00.000+01:00'
+  name: Statement Policy
+  description: Statement Policy
+  code: STMUS008005
+  physicalStatementThreshold: '999999999'
+  graceDays: 0
+  payByHolidayTreatment: retainHoliday
+  dueDaysCalculationMethod: DueDays
+  dueDays: 15
+  allowedStatementCycles:
+    - billingCycle: CYCIN00111101
+    - billingCycle: CYCIN00111102
+    - billingCycle: CYCIN00111103
+    - billingCycle: CYCIN00111104
+    - billingCycle: CYCIN00111105
+    - billingCycle: CYCIN00111106
+    - billingCycle: CYCIN00111107
+    - billingCycle: CYCIN00111108
+    - billingCycle: CYCIN00111109
+    - billingCycle: CYCIN00111110
+    - billingCycle: CYCIN00111111
+    - billingCycle: CYCIN00111112
+    - billingCycle: CYCIN00111113
+    - billingCycle: CYCIN00111114
+    - billingCycle: CYCIN00111115
+    - billingCycle: CYCIN00111116
+    - billingCycle: CYCIN00111117
+    - billingCycle: CYCIN00111118
+    - billingCycle: CYCIN00111119
+    - billingCycle: CYCIN00111120
+    - billingCycle: CYCIN00111121
+    - billingCycle: CYCIN00111122
+    - billingCycle: CYCIN00111123
+    - billingCycle: CYCIN00111124
+    - billingCycle: CYCIN00111125
+    - billingCycle: CYCIN00111126
+    - billingCycle: CYCIN00111127
+    - billingCycle: CYCIN00111128
+  password: function password(context) { return context.customerIdLast4 || context.customerDobHash; }
+  statementTemplateCode: https://hercules-assets.mum1-pp.zetaapps.in/statement-templates/3.15.0/abc/template.html
+  applyLateFeesOn: GRACE_DATE
+  valueDateOfLateFees: DUE_DATE
+  ytdSummaryEnabled: true
+  ytdSummaryStartDate: 1
+  ytdSummaryStartMonth: 1
+  isProbableLateFeeEnabled: true
+  isSchumerBoxEnabled: true
+  schumerMonthsToRepay: 36
+  isInterestBreakupEnabled: true
+  yearlyCycle: CYCIN00111129
+  billingCycleChangeConfig:
+    coolOffDaysBetweenBillingCycleChange: 0
+    rules:
+      - maxLimit: 10
+        period: YEARLY
+  templateCode: in-credit

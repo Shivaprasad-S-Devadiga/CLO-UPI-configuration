@@ -43,7 +43,7 @@ spec:
           serviceProvider: EMERALD  
         notificationProduct:
           description: Notification product for credit bundles
-          productCode: NOTIFI9978
+          productCode: NOTIFIN001111
           productName: Credit Notification Product 1
           receiverType: ACCOUNT_HOLDER
           serviceProvider: LUMINOS

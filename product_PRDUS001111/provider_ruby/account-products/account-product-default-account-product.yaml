@@ -65,8 +65,8 @@ spec:
           code: SPLIN001007
           version: 0.0.1
         statementPolicy:
-          code: STM<CC>00<XXXX>
-          version: <X>
+          code: STMUS008005
+          version: 0.0.1
       productPreferences:
         # cashLimitPercent: 40
         issuanceEndDate: YYYY-MM-DD

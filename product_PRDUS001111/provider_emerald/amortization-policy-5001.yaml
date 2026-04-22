@@ -5,14 +5,14 @@ metadata:
 spec:
   metadata:
     id: emerald.emeraldamortizationpolicy.5001
-    name: Credit line on UPI COA Emerald Amortization Policies
+    name: Credit line on UPI  Emerald Amortization Policies
     description: Credit line on UPI Emerald Amortization Policies
     requester:
       module: emerald-module-e2e
       moduleVersion: 0.0.1
     tenantId: '600309'
     tenantCode: lsg
-  validFrom: '2026-03-16T00:00:00.000+05:30'
+  validFrom: '2026-01-01T00:00:00.000+05:30'
   validTill: '2999-12-31T00:00:00.000+05:30'
   name: Amortization Policy
   description: Amortization Policy
@@ -22,10 +22,15 @@ spec:
   paymentType: ARREARS
   reAmortizationType: INSTALLMENT
   brokenPeriodApplicable: true
-  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION
+  reAmortizationMethod: WITHOUT_INTEREST_CAPITALISATION #additional
   roundingRule: NEAR
   emiAmountRoundingRule: NEAR
   repaymentScheduleType: EPI
+  emiDateType: CUSTOMER_PREFERRED #additional
   autoReAmortizationAllowed: true
-  residualAmountValidationAllowed: false
+  interestStartDay: TRANSACTION_DATE
+  prepaymentAdjustment:
+    adjustEmi: true
+    adjustTenure: false
+  residualAmountValidationAllowed: false #additional
   templateCode: in-credit
