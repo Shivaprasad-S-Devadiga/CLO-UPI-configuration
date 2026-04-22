@@ -1,0 +1,31 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.configuration.module.clou-upi-credit-balance-refund-policy
+  namespace: ruby
+spec:
+  metadata:
+    id: ruby.configuration.module.clou-upi-credit-balance-refund-policy
+    name: clou-upi-credit-balance-refund-policy
+    description: CLOU UPI Credit Balance Refund Policy
+    tenantId: '600309'
+    tenantCode: lsg
+  config:
+    format: JSON
+    key: credit-balance-refund-policy
+    value:
+      name: Credit Balance Handling
+      description: Refund excess balance above threshold to linked bank account
+      creditBalanceHandlingModels:
+        - sourceCategory: ExcessPaymentUnallocatable
+          model: AUTOREFUND
+          selectionCriteria:
+            type: DECLARATIVE
+            frequency: CYCLE
+            keyDateURI: keyDateSpecification://code/REGULAR_DATE
+      automaticRefundEnabled: true
+      balanceThreshold: 2000
+      ageThreshold: 3
+      refundType: FULL
+  validFrom: '2026-01-01T00:00:00.000+05:30'
+  validTill: '2999-12-31T23:59:59.999+05:30'

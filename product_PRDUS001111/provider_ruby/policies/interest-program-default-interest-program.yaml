@@ -28,21 +28,18 @@ spec:
     value:
       attributes: {}
       code: IPGIN0001
-      description: clou-upi Credit Line Interest Program
+      description: clou-upi Interest Program
       interestRules:
       - applicableTo:
           maxValueThreshold: 999999999999
           minValueThreshold: 0
           postingCategories:
           - RetailPrincipalUnbilled
-          - RetailInterestUnbilled
-          - LateFeeUnbilled
-          - RetailServiceFeeUnbilled
-          - RetailMiscFeeUnbilled
           transactionSelectionCriterion: function evaluate(ruleContext) { var mcc = ruleContext && ruleContext.postingInfo && ruleContext.postingInfo.postingAttributes && ruleContext.postingInfo.postingAttributes['super-card.mcc']; return ['8011','8041','8021'].indexOf(mcc) !== -1; }
         modelParameters:
           gracePeriodType: POLICY
-          margin: 15.00
+          margin: 18.00
+          maxRate: 28.00
           rateTable:
             code: IRTIN0001
             version: 1
@@ -53,14 +50,11 @@ spec:
           minValueThreshold: 0
           postingCategories:
           - RetailPrincipalUnbilled
-          - RetailInterestUnbilled
-          - LateFeeUnbilled
-          - RetailServiceFeeUnbilled
-          - RetailMiscFeeUnbilled
           transactionSelectionCriterion: function evaluate(ruleContext) { var mcc = ruleContext && ruleContext.postingInfo && ruleContext.postingInfo.postingAttributes && ruleContext.postingInfo.postingAttributes['super-card.mcc']; return ['5732','5733','5722','5211'].indexOf(mcc) !== -1; }
         modelParameters:
           gracePeriodType: POLICY
           margin: 27.00
+          maxRate: 36.00
           rateTable:
             code: IRTIN0001
             version: 1
@@ -71,20 +65,17 @@ spec:
           minValueThreshold: 0
           postingCategories:
           - RetailPrincipalUnbilled
-          - RetailInterestUnbilled
-          - LateFeeUnbilled
-          - RetailServiceFeeUnbilled
-          - RetailMiscFeeUnbilled
           transactionSelectionCriterion: function evaluate(ruleContext) { return true; }
         modelParameters:
           gracePeriodType: POLICY
-          margin: 24.50
+          margin: 24.00
+          maxRate: 34.00
           rateTable:
             code: IRTIN0003
             version: 1
         precedenceCode: 200
         ruleId: RULE_01
-      name: clou-upi Credit Line Interest Program
+      name: clou-upi Interest Program
       precedenceCode: '100'
       type: General
       validFrom: '2026-01-01T00:00:00.000+05:30'

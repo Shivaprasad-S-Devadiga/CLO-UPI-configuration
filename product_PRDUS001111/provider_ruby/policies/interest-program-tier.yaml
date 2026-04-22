@@ -1,0 +1,296 @@
+kind: Configuration
+apiVersion: rrsd.zetaapps.in/v1alpha1
+metadata:
+  name: lsg.ruby.configuration.module.clou-upi-interest-program.interest-program
+  namespace: ruby
+
+spec:
+  metadata:
+    id: ruby.configuration.module.clou-upi-interest-program.interest-program
+    name: clou-upi-credit-line-interest-program
+    description: CLOU UPI Interest Program with Tier + MCC Pricing
+    tenantId: '600309'
+    tenantCode: lsg
+
+  config:
+    format: YAML
+    key: key
+    isEncrypted: false
+    useVault: false
+
+    value:
+      code: IPGIN0001
+      description: CLOU UPI Tier + MCC Interest Program
+
+      interestRules:
+
+      #################################################################
+      # 🔵 PLATINUM TIER
+      #################################################################
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_PLATINUM') && ['8011','8041','8021'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 16.00
+          maxRate: 26.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 10
+        ruleId: PLATINUM_MEDICAL
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_PLATINUM') && ['5732','5733','5722','5211'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 22.00
+          maxRate: 30.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 20
+        ruleId: PLATINUM_ELECTRONICS
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              return tags?.includes('TIER_PLATINUM');
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 20.00
+          maxRate: 28.00
+          rateTable:
+            code: IRTIN0003
+            version: 1
+        precedenceCode: 30
+        ruleId: PLATINUM_DEFAULT
+
+
+      #################################################################
+      # 🟡 GOLD TIER
+      #################################################################
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_GOLD') && ['8011','8041','8021'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 18.00
+          maxRate: 28.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 40
+        ruleId: GOLD_MEDICAL
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_GOLD') && ['5732','5733','5722','5211'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 25.00
+          maxRate: 34.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 50
+        ruleId: GOLD_ELECTRONICS
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              return tags?.includes('TIER_GOLD');
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 22.00
+          maxRate: 32.00
+          rateTable:
+            code: IRTIN0003
+            version: 1
+        precedenceCode: 60
+        ruleId: GOLD_DEFAULT
+
+
+      #################################################################
+      # ⚪ SILVER TIER
+      #################################################################
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_SILVER') && ['8011','8041','8021'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 20.00
+          maxRate: 30.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 70
+        ruleId: SILVER_MEDICAL
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return tags?.includes('TIER_SILVER') && ['5732','5733','5722','5211'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 26.00
+          maxRate: 35.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 80
+        ruleId: SILVER_ELECTRONICS
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var tags = ruleContext.account && ruleContext.account.tags;
+              return tags?.includes('TIER_SILVER');
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 24.00
+          maxRate: 34.00
+          rateTable:
+            code: IRTIN0003
+            version: 1
+        precedenceCode: 90
+        ruleId: SILVER_DEFAULT
+
+
+      #################################################################
+      # 🟤 BRONZE (DEFAULT)
+      #################################################################
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return ['8011','8041','8021'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 22.00
+          maxRate: 32.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 100
+        ruleId: BRONZE_MEDICAL
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              var mcc = ruleContext?.postingInfo?.postingAttributes?.['super-card.mcc'];
+              return ['5732','5733','5722','5211'].includes(mcc);
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 28.00
+          maxRate: 36.00
+          rateTable:
+            code: IRTIN0001
+            version: 1
+        precedenceCode: 110
+        ruleId: BRONZE_ELECTRONICS
+
+      - applicableTo:
+          minValueThreshold: 0
+          maxValueThreshold: 999999999999
+          postingCategories:
+            - RetailPrincipalUnbilled
+          transactionSelectionCriterion: |
+            function evaluate(ruleContext) {
+              return true;
+            }
+        modelParameters:
+          gracePeriodType: POLICY
+          margin: 26.00
+          maxRate: 34.00
+          rateTable:
+            code: IRTIN0003
+            version: 1
+        precedenceCode: 200
+        ruleId: BRONZE_DEFAULT
+
+      name: CLOU UPI Tier + MCC Interest Program
+      precedenceCode: '100'
+      type: General
+
+      validFrom: '2026-01-01T00:00:00.000+05:30'
+      validUntil: '2999-12-31T23:59:59.999+05:30'

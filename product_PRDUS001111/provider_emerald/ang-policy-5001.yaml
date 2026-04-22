@@ -16,7 +16,7 @@ spec:
   code: ENGIN005001
   description: Account Number Generation
   customGeneratorPlaceholders:
-    productCode: '1001'
+    productCode: '1111'
     productClass: '12'
   generatorConfig:
     code: INGIN001003

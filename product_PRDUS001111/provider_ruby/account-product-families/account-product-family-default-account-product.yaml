@@ -49,6 +49,9 @@ spec:
           code: DORIN00001
           version: 0.0.1
         feePolicies:
+          annualFee:
+            code: ANFIN0001
+            version: 0.0.1
           lateFee:
             code: LPFIN00001
             version: 0.0.1

@@ -21,11 +21,11 @@ spec:
     amountType: FIXED
     restrictOnOtherFees: []
     repeatedOccurrence:
-      maxAmount: 4100
-      baseAmount: 4100
+      maxAmount: 4000
+      baseAmount: 400
     firstOccurenceAmount:
-      maxAmount: 2900
-      baseAmount: 2900
+      maxAmount: 2000
+      baseAmount: 200
     repeatOccurrenceWindow:
       type: CYCLES
       count: '6'
@@ -34,19 +34,19 @@ spec:
   chargeStrategy: DIRECT-APPLY
   precedenceCode: ZZ0025
   chargeStrategyConfig:
-    placeHold:
-      phase: EOPI
-      applyOn: keyDateSpecification://code/DUE_DATE
-      purposeCode: LATE_PAYMENT_CHARGES
-      voucherCode: PLACE_HOLD
-      expiryInDays: '100'
+    # placeHold:
+    #   phase: EOPI
+    #   applyOn: keyDateSpecification://code/DUE_DATE
+    #   purposeCode: LATE_PAYMENT_CHARGES
+    #   voucherCode: PLACE_HOLD
+    #   expiryInDays: '100'
     application:
       applyOn: keyDateSpecification://code/GRACE_DATE
       offsetDaysForValueDate: '1'
-    releaseHold:
-      phase: EOPI
-      applyOn: keyDateSpecification://code/BILLING_DATE
-      voucherCode: RELEASE_HOLD
+    # releaseHold:
+    #   phase: EOPI
+    #   applyOn: keyDateSpecification://code/BILLING_DATE
+    #   voucherCode: RELEASE_HOLD
   requiredChargeArtifactSummary:
     - categoryCode: LateFeeUnbilled
       duration:
